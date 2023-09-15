@@ -10,6 +10,8 @@
 
 &nbsp;
 
+<p>The base project is located in <i>projects/java-spring-boot-base</i>.</p>
+
 <p>Each project will have its own structure and instructions on how to execute.</p>
 
 <p>This is a personal project, but any contribution or discussion is welcome! 🙂</p>
