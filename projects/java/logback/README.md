@@ -1,4 +1,4 @@
-<h1 align="center"><strong>Spring Boot - Logback</strong></h1>
+<h1 align="center"><strong>Logback</strong></h1>
 
 <p>This project has a simple Logback configuration implementation. A customization of logback.xml was applied so that the logs in the console are displayed with styling, and a .log file is generated in the project root.</p>
 
