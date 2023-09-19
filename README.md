@@ -20,4 +20,4 @@
 
 <h2>License</h2>
 
-The [MIT License](https://opensource.org/license/isc-license-txt/) (ISC)
+The [MIT License](https://opensource.org/license/mit/) (ISC)
