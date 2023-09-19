@@ -25,10 +25,6 @@ public class User implements Serializable {
 		this.isActive = isActive;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 	public Long getId() {
 		return id;
 	}

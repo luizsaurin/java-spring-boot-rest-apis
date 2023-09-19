@@ -5,5 +5,5 @@
 &nbsp;
 
 <div align="center">
-	<img src="import-collection-thunderclient.png">
+	<img src="import.png">
 </div>

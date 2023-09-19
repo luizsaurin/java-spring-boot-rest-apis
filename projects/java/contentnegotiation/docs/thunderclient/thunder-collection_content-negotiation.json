@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
-    "collectionName": "spring-boot-api-requests",
-    "dateExported": "2023-09-18T18:57:40.485Z",
+    "collectionName": "content-negotiation",
+    "dateExported": "2023-09-18T20:48:05.145Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "fb346f1b-8cc7-4775-9dfd-59d0cbc7578f",
-            "colId": "d0dadfae-7fb1-467b-96c2-319881eb2277",
+            "_id": "a5f88df5-b9ae-4c15-85b7-0350c6625bb0",
+            "colId": "60161068-ea8a-4133-96c3-9cdc10814cb4",
             "containerId": "",
             "name": "JSON",
             "url": "/user",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2023-09-15T17:28:47.733Z",
-            "modified": "2023-09-18T18:45:02.809Z",
+            "created": "2023-09-18T20:47:45.554Z",
+            "modified": "2023-09-18T20:47:45.554Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -25,15 +25,15 @@
             "tests": []
         },
         {
-            "_id": "23aab409-d695-4cff-8a93-2f09a348e55d",
-            "colId": "d0dadfae-7fb1-467b-96c2-319881eb2277",
+            "_id": "a34f076b-be53-4976-9d35-ce987b34ae81",
+            "colId": "60161068-ea8a-4133-96c3-9cdc10814cb4",
             "containerId": "",
             "name": "XML",
             "url": "/user",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2023-09-18T18:45:09.792Z",
-            "modified": "2023-09-18T18:50:32.258Z",
+            "created": "2023-09-18T20:47:45.555Z",
+            "modified": "2023-09-18T20:47:45.555Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -49,15 +49,15 @@
             "tests": []
         },
         {
-            "_id": "64786933-82c0-4499-afee-b3aa4d9abce0",
-            "colId": "d0dadfae-7fb1-467b-96c2-319881eb2277",
+            "_id": "d0c06d19-0c68-423c-84df-19596b1b4630",
+            "colId": "60161068-ea8a-4133-96c3-9cdc10814cb4",
             "containerId": "",
             "name": "YAML",
             "url": "/user",
             "method": "GET",
             "sortNum": 30000,
-            "created": "2023-09-18T18:46:01.368Z",
-            "modified": "2023-09-18T18:50:58.875Z",
+            "created": "2023-09-18T20:47:45.556Z",
+            "modified": "2023-09-18T20:47:45.556Z",
             "headers": [
                 {
                     "name": "Accept",
