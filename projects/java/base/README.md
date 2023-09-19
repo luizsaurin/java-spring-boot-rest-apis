@@ -1,4 +1,4 @@
-<h1 align="center"><strong>Spring Boot - Base project</strong></h1>
+<h1 align="center"><strong>Base project</strong></h1>
 
 <p>REST API using Java and Spring Boot to perform a simple Users CRUD. The project uses the following dependencies:</p>
 
