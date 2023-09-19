@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+	<appender name="LOGS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./logs/logs.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./logs/logs.%d.log.zip</fileNamePattern>
+            <maxHistory>31</maxHistory>
+        </rollingPolicy>
+        <encoder>
+			<pattern>%d{YYYY-MM-dd HH:mm:ss.SSSZ} :: %-5level [%thread] %logger : %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- custom coloring conversion -->
+    <conversionRule conversionWord="logcolors" converterClass="com.example.logback.config.LogColors"/>
+    <conversionRule conversionWord="loglevelcolors" converterClass="com.example.logback.config.LogLevelColors"/>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+			<pattern>%black(%d{YYYY-MM-dd HH:mm:ss.SSSZ}) %logcolors(::) %loglevelcolors(%-5level) %logcolors([%thread] %logger : %msg%n)</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="LOGS"/>
+    </root>
+</configuration>
