@@ -1,0 +1,119 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "hateoas",
+    "dateExported": "2023-09-20T19:44:18.960Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "51c89534-1964-4086-a0cc-f78a9f662c88",
+            "colId": "3db189d1-c3fb-429a-91c1-15064ac52409",
+            "containerId": "",
+            "name": "Find All Users",
+            "url": "/users",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-20T17:19:31.890Z",
+            "modified": "2023-09-20T18:30:13.765Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "0",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "size",
+                    "value": "10",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sort",
+                    "value": "id,desc",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "cfb53f9f-9699-41ea-8d72-dbe6bf54e449",
+            "colId": "3db189d1-c3fb-429a-91c1-15064ac52409",
+            "containerId": "",
+            "name": "Find User",
+            "url": "/users/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-09-20T17:19:31.891Z",
+            "modified": "2023-09-20T17:19:31.891Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "00b2fc56-d3a1-4e16-beff-cb12fa118878",
+            "colId": "3db189d1-c3fb-429a-91c1-15064ac52409",
+            "containerId": "",
+            "name": "Create User",
+            "url": "/users",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-09-20T17:19:31.892Z",
+            "modified": "2023-09-20T17:19:31.892Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstName\":\"First Name 1\",\n  \"lastName\":\"Last Name 1\",\n  \"age\":30,\n  \"email\":\"testuser1@mail.com\",\n  \"isActive\":1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7f4aa6f4-8ac0-4396-bc0b-0abd77087e4d",
+            "colId": "3db189d1-c3fb-429a-91c1-15064ac52409",
+            "containerId": "",
+            "name": "Update User",
+            "url": "/users/41",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-09-20T17:19:31.893Z",
+            "modified": "2023-09-20T17:19:31.893Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstName\":\"First Name 1\",\n  \"lastName\":\"Last Name 1\",\n  \"age\":30,\n  \"email\":\"testuser1@mail.com\",\n  \"isActive\":0\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9204156e-d220-419e-86e8-0aa37d73269e",
+            "colId": "3db189d1-c3fb-429a-91c1-15064ac52409",
+            "containerId": "",
+            "name": "Delete User",
+            "url": "/users/41",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-09-20T17:19:31.894Z",
+            "modified": "2023-09-20T17:19:31.894Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ],
+    "settings": {
+        "headers": [
+            {
+                "name": "Accept-Language",
+                "value": "en_US"
+            }
+        ],
+        "options": {
+            "baseUrl": "http://localhost:5000"
+        }
+    }
+}
