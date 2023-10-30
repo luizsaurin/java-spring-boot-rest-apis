@@ -17,7 +17,7 @@
 </ol>
 
 <div align="center">
-	<img src="assets/user1.png">
+	<img src="resources/img/user1.png">
 </div>
 
 &nbsp;
@@ -25,7 +25,7 @@
 <p>This is the json resulting from this configuration:</p>
 
 <div align="center">
-	<img src="assets/json1.png">
+	<img src="resources/img/json1.png">
 </div>
 
 &nbsp;
@@ -39,18 +39,18 @@
 <p>The configuration applied in this example is the same as that applied in the previous example.</p>
 
 <div align="center">
-	<img src="assets/user2.png">
+	<img src="resources/img/user2.png">
 </div>
 
 &nbsp;
 
 <div align="center">
-	<img src="assets/user2dto.png">
+	<img src="resources/img/user2dto.png">
 </div>
 <p>This is the json resulting from this configuration:</p>
 
 <div align="center">
-	<img src="assets/json2.png">
+	<img src="resources/img/json2.png">
 </div>
 
 &nbsp;
