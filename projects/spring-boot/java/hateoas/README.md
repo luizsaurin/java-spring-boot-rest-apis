@@ -65,17 +65,17 @@
 <p>First it is necessary to extend the <b>RepresentationModel</b> class from the <i>org.springframework.hateoas</i> package.</p>
 
 <div align="center">
-	<img src="assets/dto-extends.png">
+	<img src="resources/img/dto-extends.png">
 </div>
 
 <p>Then add the code with the "links" field and the desired tags inside the DTO class constructor.</p>
 
 <div align="center">
-	<img src="assets/link-fields.png">
+	<img src="resources/img/link-fields.png">
 </div>
 
 <p>With these settings, each user will have the "self" and "allUsers" link in the response json.</p>
 
 <div align="center">
-	<img src="assets/user1.png">
+	<img src="resources/img/user1.png">
 </div>

@@ -5,5 +5,5 @@
 &nbsp;
 
 <div align="center">
-	<img src="assets/requests.png">
+	<img src="resources/img/requests.png">
 </div>
