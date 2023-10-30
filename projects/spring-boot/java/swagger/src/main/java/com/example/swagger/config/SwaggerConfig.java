@@ -1,5 +1,6 @@
 package com.example.swagger.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,13 +11,22 @@ import io.swagger.v3.oas.models.info.License;
 @Configuration
 public class SwaggerConfig {
 	
+	@Value("${app.name}")
+	private String appName;
+
+	@Value("${app.description}")
+	private String appDescription;
+
+	@Value("${app.version}")
+	private String appVersion;
+
 	@Bean
 	OpenAPI customOpenAPI() {
 		return new OpenAPI()
 			.info(new Info()
-				.title("My API using Swagger")
-				.version("v1")
-				.description("Simple Spring Boot REST API using Swagger")
+				.title(appName)
+				.version(appVersion)
+				.description(appDescription)
 				.termsOfService("")
 				.license(
 					new License()
