@@ -1,9 +1,12 @@
 package com.example.swagger.service;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -29,7 +32,22 @@ public class UserService {
 	}
 
 	public ResponseEntity<?> findAll(Pageable pagination) {
-		return ResponseEntity.ok(repository.findAll(pagination).map(UserDetailsDto::new));
+		
+		Page<User> page = repository.findAll(pagination);
+
+		List<User> content = page.getContent();
+
+		if(content == null || content.size() <= 0) {
+			return ResponseEntity.ok().build();
+		}
+		
+		List<UserDetailsDto> users = new ArrayList<>();
+
+		for (User u : content) {
+			users.add(new UserDetailsDto(u));
+		}
+		
+		return ResponseEntity.ok(users);
 	}
 
 	public ResponseEntity<?> create(UserCreationDto dto, UriComponentsBuilder uriBuilder) {
