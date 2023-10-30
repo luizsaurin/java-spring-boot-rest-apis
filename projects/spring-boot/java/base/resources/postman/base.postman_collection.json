@@ -38,7 +38,68 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "id,desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Oct 2023 17:59:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"id\": 40,\n            \"firstName\": \"Darius\",\n            \"lastName\": \"Rowe\",\n            \"age\": 52,\n            \"email\": \"dictum.phasellus.in@hotmail.ca\",\n            \"isActive\": true\n        },\n        {\n            \"id\": 39,\n            \"firstName\": \"MacKensie\",\n            \"lastName\": \"Dunn\",\n            \"age\": 35,\n            \"email\": \"risus.a@outlook.org\",\n            \"isActive\": false\n        },\n        {\n            \"id\": 38,\n            \"firstName\": \"Quinlan\",\n            \"lastName\": \"Cervantes\",\n            \"age\": 64,\n            \"email\": \"duis.at@protonmail.net\",\n            \"isActive\": false\n        },\n        {\n            \"id\": 37,\n            \"firstName\": \"Ori\",\n            \"lastName\": \"Gomez\",\n            \"age\": 75,\n            \"email\": \"nibh.donec@aol.net\",\n            \"isActive\": true\n        },\n        {\n            \"id\": 36,\n            \"firstName\": \"Vivien\",\n            \"lastName\": \"Potter\",\n            \"age\": 35,\n            \"email\": \"ac.libero@protonmail.ca\",\n            \"isActive\": false\n        },\n        {\n            \"id\": 35,\n            \"firstName\": \"Tucker\",\n            \"lastName\": \"Cabrera\",\n            \"age\": 55,\n            \"email\": \"integer.urna@hotmail.com\",\n            \"isActive\": false\n        },\n        {\n            \"id\": 34,\n            \"firstName\": \"Hedy\",\n            \"lastName\": \"Mathews\",\n            \"age\": 88,\n            \"email\": \"tempor.diam@aol.ca\",\n            \"isActive\": false\n        },\n        {\n            \"id\": 33,\n            \"firstName\": \"Brenna\",\n            \"lastName\": \"Pacheco\",\n            \"age\": 59,\n            \"email\": \"erat.in@google.ca\",\n            \"isActive\": false\n        },\n        {\n            \"id\": 32,\n            \"firstName\": \"Stephen\",\n            \"lastName\": \"Cooley\",\n            \"age\": 76,\n            \"email\": \"ornare.fusce.mollis@outlook.edu\",\n            \"isActive\": false\n        },\n        {\n            \"id\": 31,\n            \"firstName\": \"Nissim\",\n            \"lastName\": \"Cobb\",\n            \"age\": 43,\n            \"email\": \"ac.metus.vitae@hotmail.couk\",\n            \"isActive\": true\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 10,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": false,\n    \"totalPages\": 4,\n    \"totalElements\": 40,\n    \"first\": true,\n    \"size\": 10,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": false,\n        \"sorted\": true,\n        \"unsorted\": false\n    },\n    \"numberOfElements\": 10,\n    \"empty\": false\n}"
+				}
+			]
 		},
 		{
 			"name": "Find User",
@@ -62,7 +123,58 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Oct 2023 18:00:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"firstName\": \"Porter\",\n    \"lastName\": \"Briggs\",\n    \"age\": 70,\n    \"email\": \"in.faucibus@protonmail.couk\",\n    \"isActive\": false\n}"
+				}
+			]
 		},
 		{
 			"name": "Create User",
@@ -100,7 +212,64 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"{{$randomFirstName}}\",\r\n    \"lastName\":\"{{$randomLastName}}\",\r\n    \"age\":{{randomAge}},\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"isActive\":{{$randomBoolean}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:5000/users/42"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Oct 2023 18:00:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 42,\n    \"firstName\": \"Britney\",\n    \"lastName\": \"Lindgren\",\n    \"age\": 84,\n    \"email\": \"Alyce59@hotmail.com\",\n    \"isActive\": true\n}"
+				}
+			]
 		},
 		{
 			"name": "Update User",
@@ -140,12 +309,72 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "41"
+							"value": "1"
 						}
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"{{$randomFirstName}}\",\r\n    \"lastName\":\"{{$randomLastName}}\",\r\n    \"age\":{{randomAge}},\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"isActive\":{{$randomBoolean}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "42"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Oct 2023 18:00:41 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 42,\n    \"firstName\": \"Daron\",\n    \"lastName\": \"Altenwerth\",\n    \"age\": 62,\n    \"email\": \"Aurore.Kuvalis25@hotmail.com\",\n    \"isActive\": false\n}"
+				}
+			]
 		},
 		{
 			"name": "Delete User",
@@ -164,12 +393,55 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "41"
+							"value": "1"
 						}
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "204",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "42"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 30 Oct 2023 18:01:23 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
 		}
 	],
 	"event": [
