@@ -3,6 +3,7 @@ package com.example.mapper.service;
 import java.net.URI;
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -19,13 +20,15 @@ import com.example.mapper.repository.UserRepository;
 public class UserService {
 	
 	@Autowired private UserRepository repository;
+	@Autowired private ModelMapper mapper;
 
 	public ResponseEntity<?> findById(Long id) {
 		Optional<User> op = repository.findById(id);
 		if(!op.isPresent()) {
 			return ResponseEntity.notFound().build();
 		}
-		return ResponseEntity.ok(new UserDetailsDto(op.get()));
+		return ResponseEntity.ok(mapper.map(op.get(), UserDetailsDto.class));
+		// return ResponseEntity.ok(new UserDetailsDto(op.get()));
 	}
 
 	public ResponseEntity<?> findAll(Pageable pagination) {
