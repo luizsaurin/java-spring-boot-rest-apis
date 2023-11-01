@@ -13,20 +13,21 @@
 
 ```
 <dependency>
-	<groupId>org.modelmapper</groupId>
-	<artifactId>modelmapper</artifactId>
-	<version>3.2.0</version> <!-- latest version -->
+  <groupId>org.modelmapper</groupId>
+  <artifactId>modelmapper</artifactId>
+  <version>3.2.0</version> <!-- latest version -->
 </dependency>
 ```
 
 <p>Create a the initial Configuration class.</p>
 
 ```
+@Configuration
 public class ModelMapperConfig {
-    @Bean
-    ModelMapper modelMapper() {
-		return new ModelMapper();
-	}
+  @Bean
+  ModelMapper modelMapper() {
+    return new ModelMapper();
+  }
 }
 ```
 
