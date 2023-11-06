@@ -1,0 +1,571 @@
+{
+	"info": {
+		"_postman_id": "d75e56fd-19e4-477b-81a9-9c4c8ebc223f",
+		"name": "model-mapper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13895087"
+	},
+	"item": [
+		{
+			"name": "Find Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "id,desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "id,desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 17:10:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 10,\n        \"firstName\": \"Joel\",\n        \"lastName\": \"Anderson\",\n        \"age\": 41,\n        \"email\": \"sem.mollis@yahoo.net\",\n        \"isActive\": true\n    },\n    {\n        \"id\": 9,\n        \"firstName\": \"Maxwell\",\n        \"lastName\": \"Pollard\",\n        \"age\": 60,\n        \"email\": \"arcu.sed@google.com\",\n        \"isActive\": false\n    },\n    {\n        \"id\": 8,\n        \"firstName\": \"Quyn\",\n        \"lastName\": \"Lawrence\",\n        \"age\": 38,\n        \"email\": \"consectetuer.cursus@yahoo.org\",\n        \"isActive\": false\n    },\n    {\n        \"id\": 7,\n        \"firstName\": \"Mohammad\",\n        \"lastName\": \"Daniel\",\n        \"age\": 25,\n        \"email\": \"nibh@yahoo.ca\",\n        \"isActive\": false\n    },\n    {\n        \"id\": 6,\n        \"firstName\": \"Hadassah\",\n        \"lastName\": \"Duncan\",\n        \"age\": 89,\n        \"email\": \"arcu@protonmail.net\",\n        \"isActive\": true\n    },\n    {\n        \"id\": 5,\n        \"firstName\": \"Samson\",\n        \"lastName\": \"Fulton\",\n        \"age\": 80,\n        \"email\": \"enim.etiam.gravida@aol.com\",\n        \"isActive\": false\n    },\n    {\n        \"id\": 4,\n        \"firstName\": \"Lionel\",\n        \"lastName\": \"Barnett\",\n        \"age\": 76,\n        \"email\": \"placerat.eget@outlook.org\",\n        \"isActive\": false\n    },\n    {\n        \"id\": 3,\n        \"firstName\": \"Kaitlin\",\n        \"lastName\": \"Calderon\",\n        \"age\": 62,\n        \"email\": \"lorem.semper@google.org\",\n        \"isActive\": false\n    },\n    {\n        \"id\": 2,\n        \"firstName\": \"Guy\",\n        \"lastName\": \"Hernandez\",\n        \"age\": 60,\n        \"email\": \"justo.sit@aol.com\",\n        \"isActive\": true\n    },\n    {\n        \"id\": 1,\n        \"firstName\": \"Porter\",\n        \"lastName\": \"Briggs\",\n        \"age\": 70,\n        \"email\": \"in.faucibus@protonmail.couk\",\n        \"isActive\": false\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Find User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 17:10:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"firstName\": \"Porter\",\n    \"lastName\": \"Briggs\",\n    \"age\": 70,\n    \"email\": \"in.faucibus@protonmail.couk\",\n    \"isActive\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "Create User V1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const randomAge = _.random(20,90)\r",
+							"pm.variables.set('randomAge', randomAge)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"{{$randomFirstName}}\",\r\n    \"lastName\":\"{{$randomLastName}}\",\r\n    \"age\":{{randomAge}},\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"isActive\":{{$randomBoolean}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"{{$randomFirstName}}\",\r\n    \"lastName\":\"{{$randomLastName}}\",\r\n    \"age\":{{randomAge}},\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"isActive\":{{$randomBoolean}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:5000/users/11"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 17:10:52 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 11,\n    \"firstName\": \"Jamaal\",\n    \"lastName\": \"Gerlach\",\n    \"age\": 60,\n    \"email\": \"Brandt29@gmail.com\",\n    \"isActive\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "Create User V2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const randomAge = _.random(20,90)\r",
+							"pm.variables.set('randomAge', randomAge)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"{{$randomFullName}}\",\r\n    \"age\":{{randomAge}},\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"active\":\"{{$randomBoolean}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/v2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"v2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"{{$randomFullName}}\",\r\n    \"age\":{{randomAge}},\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"active\":\"{{$randomBoolean}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/v2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"v2"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:5000/users/12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 17:11:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 12,\n    \"firstName\": \"Rick\",\n    \"lastName\": \"Waelchi\",\n    \"age\": 33,\n    \"email\": \"Sofia_Ondricka@yahoo.com\",\n    \"isActive\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "Update User",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const randomAge = _.random(20,90)\r",
+							"pm.variables.set('randomAge', randomAge)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"{{$randomFirstName}}\",\r\n    \"lastName\":\"{{$randomLastName}}\",\r\n    \"age\":{{randomAge}},\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"isActive\":{{$randomBoolean}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "11"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"{{$randomFirstName}}\",\r\n    \"lastName\":\"{{$randomLastName}}\",\r\n    \"age\":{{randomAge}},\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"isActive\":{{$randomBoolean}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 17:11:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 11,\n    \"firstName\": \"Carmine\",\n    \"lastName\": \"Goodwin\",\n    \"age\": 81,\n    \"email\": \"Mozell_Lynch@yahoo.com\",\n    \"isActive\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "11"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "204",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2023 17:11:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
