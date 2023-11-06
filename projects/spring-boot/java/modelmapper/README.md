@@ -86,3 +86,5 @@ UserDetailsDto dto = mapper.map(User.class, UserDetailsDto.class);
 <div align="center">
 	<img src="resources/img/custom-converters-config.png">
 </div>
+
+<p>From now on, every time a conversion from User to UserCreationDtoV2 is performed, it will check if there is a custom converter and will use it if it exists..</p>
