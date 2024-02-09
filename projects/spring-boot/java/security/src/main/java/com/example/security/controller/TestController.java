@@ -2,42 +2,47 @@ package com.example.security.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.security.constant.TestControllerURIs;
+
 @RestController
-@RequestMapping("/test")
 public class TestController {
 
 	// Methods
 	
-	@GetMapping("/1")
+	@GetMapping(TestControllerURIs.denyAll)
 	public ResponseEntity<?> denyAll() {
 		return ResponseEntity.ok().build();
 	}
 
-	@GetMapping("/2")
+	@GetMapping(TestControllerURIs.permitAll)
 	public ResponseEntity<?> permitAll() {
 		return ResponseEntity.ok().build();
 	}
 
-	@GetMapping("/3")
+	@GetMapping(TestControllerURIs.permitAllAuthenticated)
 	public ResponseEntity<?> permitAllAuthenticated() {
 		return ResponseEntity.ok().build();
 	}
 
-	@GetMapping("/4")
-	public ResponseEntity<?> permitAuthenticatedCommonUser() {
-		return ResponseEntity.ok().build();
-	}
-
-	@GetMapping("/5")
+	@GetMapping(TestControllerURIs.permitAuthenticatedAdmin)
 	public ResponseEntity<?> permitAuthenticatedAdmin() {
 		return ResponseEntity.ok().build();
 	}
 
-	@GetMapping("/6")
-	public ResponseEntity<?> permitAuthenticatedCommunUserOrAdmin() {
+	@GetMapping(TestControllerURIs.permitAuthenticatedManager)
+	public ResponseEntity<?> permitAuthenticatedManager() {
+		return ResponseEntity.ok().build();
+	}
+
+	@GetMapping(TestControllerURIs.permitAuthenticatedCommonUser)
+	public ResponseEntity<?> permitAuthenticatedCommonUser() {
+		return ResponseEntity.ok().build();
+	}
+
+	@GetMapping(TestControllerURIs.permitAuthenticatedAdminOrManager)
+	public ResponseEntity<?> permitAuthenticatedAdminOrManager() {
 		return ResponseEntity.ok().build();
 	}
 }

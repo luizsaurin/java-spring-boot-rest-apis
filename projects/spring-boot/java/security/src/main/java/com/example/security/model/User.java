@@ -25,6 +25,7 @@ public class User implements UserDetails {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
 	
 	@Column(name = "username", unique = true)
@@ -49,10 +50,10 @@ public class User implements UserDetails {
 	@JoinTable(
 		name = "user_permission", 
 		joinColumns = {
-			@JoinColumn (name = "id_user")
+			@JoinColumn(name = "id_user")
 		},
 		inverseJoinColumns = {
-			@JoinColumn (name = "id_permission")
+			@JoinColumn(name = "id_permission")
 		})
 	private List<Permission> permissions;
 

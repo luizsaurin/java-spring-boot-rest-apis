@@ -7,5 +7,5 @@ CREATE TABLE IF NOT EXISTS `users` (
   `credentials_non_expired` BIT(1) DEFAULT NULL,
   `enabled` BIT(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_user_name` (`user_name`)
+  UNIQUE KEY `uk_username` (`username`)
 );

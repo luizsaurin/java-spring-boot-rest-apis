@@ -13,7 +13,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.example.security.enums.UserPermissions;
+import com.example.security.constant.AuthControllerURIs;
+import com.example.security.constant.TestControllerURIs;
+import com.example.security.constant.UserPermissions;
 
 @Configuration
 public class SecurityConfig {
@@ -29,27 +31,38 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
 		return http
+			.formLogin(form -> {
+				form.disable();
+			})
+			.logout(logout -> {
+				logout.disable();
+			})
 			.httpBasic(hb -> {
 				hb.disable();
 			})
-			.csrf(csrf -> {
-				csrf.disable();
+			.csrf(c -> {
+				c.disable();
 			})
 			.sessionManagement(sm -> {
 				sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 			})
 			.authorizeHttpRequests(req -> {
-				req.requestMatchers(HttpMethod.POST, "/auth").permitAll();
-				req.requestMatchers(HttpMethod.GET, "/test/1").denyAll();
-				req.requestMatchers(HttpMethod.GET, "/test/2").permitAll();
-				req.requestMatchers(HttpMethod.GET, "/test/3").authenticated();
-				req.requestMatchers(HttpMethod.GET, "/test/4").hasAuthority(UserPermissions.COMMON_USER.toString());
-				req.requestMatchers(HttpMethod.GET, "/test/5").hasAuthority(UserPermissions.ADMIN.toString());
-				req.requestMatchers(HttpMethod.GET, "/test/6").hasAnyAuthority(
-					UserPermissions.ADMIN.toString(),
-					UserPermissions.COMMON_USER.toString()
+				req.requestMatchers(HttpMethod.POST, AuthControllerURIs.login).permitAll();
+				req.requestMatchers(HttpMethod.GET, TestControllerURIs.denyAll).denyAll();
+				req.requestMatchers(HttpMethod.GET, TestControllerURIs.permitAll).permitAll();
+				req.requestMatchers(HttpMethod.GET, TestControllerURIs.permitAllAuthenticated).authenticated();
+				req.requestMatchers(HttpMethod.GET, TestControllerURIs.permitAuthenticatedAdmin).hasAuthority(UserPermissions.ADMIN);
+				req.requestMatchers(HttpMethod.GET, TestControllerURIs.permitAuthenticatedManager).hasAuthority(UserPermissions.MANAGER);
+				req.requestMatchers(HttpMethod.GET, TestControllerURIs.permitAuthenticatedCommonUser).hasAuthority(UserPermissions.COMMON_USER);
+				req.requestMatchers(HttpMethod.GET, TestControllerURIs.permitAuthenticatedAdminOrManager).hasAnyAuthority(
+					UserPermissions.ADMIN,
+					UserPermissions.MANAGER
 				);
 				req.anyRequest().denyAll();
+			})
+			.exceptionHandling(e -> {
+				e.accessDeniedHandler(accessDeniedHandler());
+				e.authenticationEntryPoint(authenticationEntryPointHandler());
 			})
 			.addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
 			.build()
@@ -64,6 +77,28 @@ public class SecurityConfig {
 	@Bean
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
+	}
+
+	@Bean
+	CustomAccessDeniedHandler accessDeniedHandler() {
+		return new CustomAccessDeniedHandler();
+	}
+
+	@Bean
+	CustomAuthenticationEntryPointHandler authenticationEntryPointHandler() {
+		return new CustomAuthenticationEntryPointHandler();
+	}
+
+	@Bean
+	CustomAuthenticationFailureHandler authenticationFailureHandler() {
+		//TODO add to security filter
+		return new CustomAuthenticationFailureHandler();
+	}
+	
+	@Bean
+	CustomAuthenticationSuccessHandler authenticationSuccessHandler() {
+		//TODO add to security filter
+		return new CustomAuthenticationSuccessHandler();
 	}
 
 }

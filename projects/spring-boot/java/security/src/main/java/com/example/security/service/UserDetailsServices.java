@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.example.security.repository.UserRepository;
 
 @Service
-public class UserService implements UserDetailsService {
+public class UserDetailsServices implements UserDetailsService {
 
 	// Dependencies
 
