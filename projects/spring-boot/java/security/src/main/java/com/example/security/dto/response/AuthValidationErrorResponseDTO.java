@@ -2,14 +2,14 @@ package com.example.security.dto.response;
 
 import org.springframework.validation.FieldError;
 
-public record LoginValidationResponseDTO(
+public record AuthValidationErrorResponseDTO(
 	String field,
 	String message
 ) {
 	
 	// Constructors
 
-	public LoginValidationResponseDTO(FieldError e) {
+	public AuthValidationErrorResponseDTO(FieldError e) {
 		this(
 			e.getField(), 
 			e.getDefaultMessage()

@@ -2,7 +2,7 @@ package com.example.security.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record LoginRequestDTO(
+public record AuthRequestDTO(
 	
 	@NotBlank
 	String username,

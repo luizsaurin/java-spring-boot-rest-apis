@@ -15,7 +15,11 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.example.security.dto.response.LoginResponseDTO;
+import com.example.security.advice.exceptions.InvalidJWTException;
+import com.example.security.constant.ErrorMessages;
+import com.example.security.constant.JWTConstants;
+import com.example.security.constant.SecurityConstants;
+import com.example.security.dto.response.AuthResponseDTO;
 import com.example.security.model.User;
 import com.example.security.utils.DateUtils;
 
@@ -52,61 +56,12 @@ public class TokenService {
 
 	@PostConstruct
 	protected void init() {
-		algorithm = Algorithm.HMAC256(secret);
+		algorithm = Algorithm.HMAC256(this.secret);
 	}
 
 	// Methods
 
-	public LoginResponseDTO generateUserLoginToken(Authentication auth) {
-
-		User user = (User) auth.getPrincipal();
-
-		String username = user.getUsername();
-		Long userId = user.getId();
-
-		Date now = new Date();
-
-		Date accessExpiration = getTokenExpirationDateTime(
-			now, accessTokenExpiration
-		);
-		
-		Date refreshExpiration = getTokenExpirationDateTime(
-			now, refreshTokenExpiration
-		);
-
-		return new LoginResponseDTO(
-			DateUtils.formatDate(accessExpiration), 
-			DateUtils.formatDate(refreshExpiration),
-			generateToken(username, userId, now, accessExpiration), 
-			generateToken(username, userId, now, refreshExpiration)
-		);
-	}
-
-	private String generateToken(
-		String subject,
-		Long userId,
-		Date issuedAt,
-		Date expiresAt
-	) {
-		return JWT
-			.create()
-			.withIssuer(this.issuer)
-			.withSubject(subject)
-			.withClaim("userId", userId)
-			.withIssuedAt(issuedAt)
-			.withExpiresAt(expiresAt)
-			.sign(this.algorithm)
-			.strip()
-		;
-	}
-
-	private Date getTokenExpirationDateTime(Date now, long expiration) {
-		return new Date(now.getTime() + expiration);
-	}
-
-	public Authentication getAuthenticationForSecurityFilter(
-		HttpServletRequest request
-	) {
+	public Authentication getSecurityFilterAuthentication(HttpServletRequest request) {
 
 		String token = getRequestToken(request);
 
@@ -135,15 +90,91 @@ public class TokenService {
 		);
 	}
 
+	public AuthResponseDTO resolveAuthLogin(Authentication auth) {
+		User user = (User) auth.getPrincipal();
+		return buildAuthResponse(user.getUsername());
+	}
+
+	public AuthResponseDTO resolveAuthRefresh(String refreshToken) {
+
+		if(Strings.isBlank(refreshToken)) {
+			throw new InvalidJWTException(ErrorMessages.BLANK_AUTH_HEADER);
+		}
+		
+		DecodedJWT jwt = decodeJWT(refreshToken);
+		
+		if(jwt == null) {
+			throw new InvalidJWTException(ErrorMessages.INVALID_JWT);
+		}
+		
+		if(isTokenExpired(jwt)) {
+			throw new InvalidJWTException(ErrorMessages.EXPIRED_JWT);
+		}
+		
+		String tokenType = jwt.getClaim(JWTConstants.TOKEN_TYPE).asString();
+
+		if(!tokenType.contentEquals(JWTConstants.REFRESH)) {
+			throw new InvalidJWTException(ErrorMessages.INVALID_JWT);
+		}
+
+		UserDetails userDetails = this.userDetailsService.loadUserByUsername(
+			jwt.getSubject()
+		);
+
+		return buildAuthResponse(userDetails.getUsername());
+	}
+
+	private AuthResponseDTO buildAuthResponse(String username) {
+		
+		Date now = new Date();
+
+		Date accessExpiration = getTokenExpirationDateTime(
+			now, this.accessTokenExpiration
+		);
+		
+		Date refreshExpiration = getTokenExpirationDateTime(
+			now, this.refreshTokenExpiration
+		);
+
+		return new AuthResponseDTO(
+			DateUtils.formatDate(accessExpiration), 
+			DateUtils.formatDate(refreshExpiration),
+			generateJWT(username, now, accessExpiration, JWTConstants.ACCESS), 
+			generateJWT(username, now, refreshExpiration, JWTConstants.REFRESH)
+		);
+	}
+
+	private String generateJWT(
+		String subject,
+		Date issuedAt,
+		Date expiresAt,
+		String tokenType
+	) {
+		return JWT
+			.create()
+			.withIssuer(this.issuer)
+			.withSubject(subject)
+			.withClaim(JWTConstants.TOKEN_TYPE, tokenType)
+			.withIssuedAt(issuedAt)
+			.withExpiresAt(expiresAt)
+			.sign(this.algorithm)
+			.strip()
+		;
+	}
+
+	private Date getTokenExpirationDateTime(Date now, long expiration) {
+		return new Date(now.getTime() + expiration);
+	}
+
 	private String getRequestToken(HttpServletRequest req) {
 
-		String authHeader = req.getHeader("Authorization");
+		String authHeader = req.getHeader(SecurityConstants.AUTHORIZATION);
 
 		if(Strings.isBlank(authHeader)) {
 			return null;
 		}
 
-		return authHeader.replace("Bearer ", "");
+		return authHeader.replace(SecurityConstants.BEARER, "");
 	}
 
 	private DecodedJWT decodeJWT(String token) {

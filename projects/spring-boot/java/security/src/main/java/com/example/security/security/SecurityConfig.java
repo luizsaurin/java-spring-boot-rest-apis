@@ -48,8 +48,9 @@ public class SecurityConfig {
 			})
 			.authorizeHttpRequests(req -> {
 				req.requestMatchers(HttpMethod.POST, AuthControllerURIs.login).permitAll();
-				req.requestMatchers(HttpMethod.GET, TestControllerURIs.denyAll).denyAll();
+				req.requestMatchers(HttpMethod.PUT, AuthControllerURIs.refresh).permitAll();
 				req.requestMatchers(HttpMethod.GET, TestControllerURIs.permitAll).permitAll();
+				req.requestMatchers(HttpMethod.GET, TestControllerURIs.denyAll).denyAll();
 				req.requestMatchers(HttpMethod.GET, TestControllerURIs.permitAllAuthenticated).authenticated();
 				req.requestMatchers(HttpMethod.GET, TestControllerURIs.permitAuthenticatedAdmin).hasAuthority(UserPermissions.ADMIN);
 				req.requestMatchers(HttpMethod.GET, TestControllerURIs.permitAuthenticatedManager).hasAuthority(UserPermissions.MANAGER);

@@ -7,7 +7,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
-import com.example.security.dto.request.LoginRequestDTO;
+import com.example.security.dto.request.AuthRequestDTO;
 
 @Service
 public class AuthService {
@@ -22,7 +22,7 @@ public class AuthService {
 
 	// Methods
 
-	public ResponseEntity<?> login(LoginRequestDTO dto) {
+	public ResponseEntity<?> login(AuthRequestDTO dto) {
 
 		Authentication auth = authManager.authenticate(
 			new UsernamePasswordAuthenticationToken(
@@ -32,8 +32,16 @@ public class AuthService {
 		);
 
 		return ResponseEntity.ok(
-			tokenService.generateUserLoginToken(auth)
+			tokenService.resolveAuthLogin(auth)
 		);
+	}
+
+	public ResponseEntity<?> refresh(String refreshToken) {
+
+		return ResponseEntity.ok(
+			tokenService.resolveAuthRefresh(refreshToken)
+		);
+
 	}
 	
 }
