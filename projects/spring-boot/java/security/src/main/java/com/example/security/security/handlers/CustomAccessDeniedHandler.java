@@ -1,4 +1,4 @@
-package com.example.security.security;
+package com.example.security.security.handlers;
 
 import java.io.IOException;
 
@@ -22,10 +22,9 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 		IOException, 
 		ServletException 
 	{
-		//TODO response
 		response.setContentType("application/json;charset=UTF-8");
 		response.setStatus(403);
-		response.getWriter().write("{\"message\":\"" + this.getClass().getSimpleName() + "\"}");
+		response.getWriter().write("{\"message\":\"my custom message\"}");
 	}
 	
 }

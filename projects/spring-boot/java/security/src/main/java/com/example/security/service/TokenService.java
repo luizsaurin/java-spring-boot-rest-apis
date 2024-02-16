@@ -75,6 +75,10 @@ public class TokenService {
 			return null;
 		}
 
+		if(!isAccessTokenType(jwt)) {
+			return null;
+		}
+
 		UserDetails userDetails = this.userDetailsService.loadUserByUsername(
 			jwt.getSubject()
 		);
@@ -102,13 +106,11 @@ public class TokenService {
 		if(jwt == null) {
 			throw new InvalidJWTException(ErrorMessages.INVALID_JWT);
 		}
-		
-		String tokenType = jwt.getClaim(JWTConstants.TOKEN_TYPE).asString();
 
-		if(!tokenType.contentEquals(JWTConstants.REFRESH)) {
+		if(!isRefreshTokenType(jwt)) {
 			throw new InvalidJWTException(ErrorMessages.INVALID_JWT);
 		}
-
+		
 		UserDetails userDetails = this.userDetailsService.loadUserByUsername(
 			jwt.getSubject()
 		);
@@ -179,6 +181,28 @@ public class TokenService {
 		} catch (JWTVerificationException e) {
 			return null;
 		}
+	}
+
+	private boolean isRefreshTokenType(DecodedJWT jwt) {
+
+		String tokenType = jwt.getClaim(JWTConstants.TOKEN_TYPE).asString();
+
+		if(tokenType.contentEquals(JWTConstants.REFRESH)) {
+			return true;
+		}
+
+		return false;
+	}
+
+	private boolean isAccessTokenType(DecodedJWT jwt) {
+
+		String tokenType = jwt.getClaim(JWTConstants.TOKEN_TYPE).asString();
+
+		if(tokenType.contentEquals(JWTConstants.ACCESS)) {
+			return true;
+		}
+
+		return false;
 	}
 
 }

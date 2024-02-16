@@ -32,6 +32,8 @@ public class SecurityConfig {
 
 		return http
 			.formLogin(form -> {
+				// form.successHandler(authenticationSuccessHandler());
+				// form.failureHandler(authenticationFailureHandler());
 				form.disable();
 			})
 			.logout(logout -> {
@@ -61,10 +63,10 @@ public class SecurityConfig {
 				);
 				req.anyRequest().denyAll();
 			})
-			.exceptionHandling(e -> {
-				e.accessDeniedHandler(accessDeniedHandler());
-				e.authenticationEntryPoint(authenticationEntryPointHandler());
-			})
+			// .exceptionHandling(e -> {
+			// 	e.accessDeniedHandler(accessDeniedHandler());
+			// 	e.authenticationEntryPoint(authenticationEntryPointHandler());
+			// })
 			.addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
 			.build()
 		;
@@ -80,26 +82,24 @@ public class SecurityConfig {
 		return new BCryptPasswordEncoder();
 	}
 
-	@Bean
-	CustomAccessDeniedHandler accessDeniedHandler() {
-		return new CustomAccessDeniedHandler();
-	}
+	// @Bean
+	// CustomAccessDeniedHandler accessDeniedHandler() {
+	// 	return new CustomAccessDeniedHandler();
+	// }
 
-	@Bean
-	CustomAuthenticationEntryPointHandler authenticationEntryPointHandler() {
-		return new CustomAuthenticationEntryPointHandler();
-	}
+	// @Bean
+	// CustomAuthenticationEntryPointHandler authenticationEntryPointHandler() {
+	// 	return new CustomAuthenticationEntryPointHandler();
+	// }
 
-	@Bean
-	CustomAuthenticationFailureHandler authenticationFailureHandler() {
-		//TODO add to security filter
-		return new CustomAuthenticationFailureHandler();
-	}
+	// @Bean
+	// CustomAuthenticationFailureHandler authenticationFailureHandler() {
+	// 	return new CustomAuthenticationFailureHandler();
+	// }
 	
-	@Bean
-	CustomAuthenticationSuccessHandler authenticationSuccessHandler() {
-		//TODO add to security filter
-		return new CustomAuthenticationSuccessHandler();
-	}
+	// @Bean
+	// CustomAuthenticationSuccessHandler authenticationSuccessHandler() {
+	// 	return new CustomAuthenticationSuccessHandler();
+	// }
 
 }
