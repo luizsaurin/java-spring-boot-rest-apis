@@ -2,6 +2,7 @@ package com.example.security.advice;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingRequestHeaderException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.example.security.advice.exceptions.InvalidJWTException;
 import com.example.security.constant.ErrorMessages;
-import com.example.security.dto.response.GenericErrorResponseDTO;
 import com.example.security.dto.response.AuthValidationErrorResponseDTO;
+import com.example.security.dto.response.GenericErrorResponseDTO;
 
 @RestControllerAdvice
 public class ControllerAdvice {
@@ -25,18 +26,16 @@ public class ControllerAdvice {
 		;
 	}
 
-	//TODO verify if is possible to handle this on the custom auth handlers
 	@ExceptionHandler(HttpMessageNotReadableException.class)
-	public ResponseEntity<?> handleHttpMessageNotReadableException() {
+	public ResponseEntity<?> handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
 		return ResponseEntity
-		.badRequest()
-		.body(
-			new GenericErrorResponseDTO(ErrorMessages.INVALID_HTTP_REQUEST)
+			.badRequest()
+			.body(
+				new GenericErrorResponseDTO(e.getMessage())
 			)
-			;
-		}
+		;
+	}
 		
-	//TODO verify if is possible to handle this on the custom auth handlers
 	@ExceptionHandler(MissingRequestHeaderException.class)
 	public ResponseEntity<?> handleMissingRequestHeaderException(MissingRequestHeaderException e) {
 		return ResponseEntity
@@ -53,6 +52,16 @@ public class ControllerAdvice {
 			.badRequest()
 			.body(
 				new GenericErrorResponseDTO(e.getMessage())
+			)
+		;
+	}
+
+	@ExceptionHandler(BadCredentialsException.class)
+	public ResponseEntity<?> handleBadCredentialsException() {
+		return ResponseEntity
+			.badRequest()
+			.body(
+				new GenericErrorResponseDTO(ErrorMessages.BAD_CREDENTIALS)
 			)
 		;
 	}

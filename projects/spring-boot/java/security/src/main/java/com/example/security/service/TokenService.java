@@ -75,10 +75,6 @@ public class TokenService {
 			return null;
 		}
 
-		if(isTokenExpired(jwt)) {
-			return null;
-		}
-
 		UserDetails userDetails = this.userDetailsService.loadUserByUsername(
 			jwt.getSubject()
 		);
@@ -105,10 +101,6 @@ public class TokenService {
 		
 		if(jwt == null) {
 			throw new InvalidJWTException(ErrorMessages.INVALID_JWT);
-		}
-		
-		if(isTokenExpired(jwt)) {
-			throw new InvalidJWTException(ErrorMessages.EXPIRED_JWT);
 		}
 		
 		String tokenType = jwt.getClaim(JWTConstants.TOKEN_TYPE).asString();
@@ -187,15 +179,6 @@ public class TokenService {
 		} catch (JWTVerificationException e) {
 			return null;
 		}
-	}
-
-	private boolean isTokenExpired(DecodedJWT jwt) {
-		
-		if(jwt.getExpiresAt().after(new Date())) {
-			return false;
-		}
-
-		return true;
 	}
 
 }
