@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS `permissions` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `description` VARCHAR(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
