@@ -1,9 +1,5 @@
-<h1 align="center"><strong>Spring Boot - Exercise Projects</strong></h1>
+<h1 align="center"><strong>Java Spring Boot - REST API Projects</strong></h1>
 
-<p>The purpose of the projects in this repository is to practice developing REST APIs. The idea is to create an API as a base project for each language/framework, and from it create copy projects where some new functionality is implemented. In this way, each project will have an individual implementation of some functionality, thus making it possible to carry out a more in-depth implementation and subsequently becoming reference material.</p>
+This is my repository of projects developed using Java and Spring Boot. These are simple projects developed as learning, with the aim of exercising different subjects and tools related to the development of REST APIs with Java and Spring Boot. These projects are not complete, ready-to-use applications. These are small projects that I developed and use as a reference. Each project is the application of different knowledge, and each can be executed and tested independently.
 
-<p>For now, the projects are being developed using Java and Spring Boot. In a near future I have plans to develop using other stacks like Kotlin and Nodejs.</p>
-
-<p>Each project will have its own structure and instructions on how to execute.</p>
-
-<p>This is a personal project, but any contribution or discussion is welcome! 🙂</p>
+I recommend opening each project in a separate editor. Opening all projects in the same editor may cause execution problems.
