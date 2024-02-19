@@ -181,7 +181,7 @@ Responsible for most cases, such as:
 
 Related to access level. Occurs when the user makes a valid request, but does not have the necessary level of permission to access the endpoint.
 
-### AuthenticationFailureHandler and CustomAuthenticationSuccessHandler
+### AuthenticationFailureHandler and AuthenticationSuccessHandler
 
 These two are related to the **stateful authentication** process. They are responsible for defining how the API should act if user authentication is successful or unsuccessful.
 
