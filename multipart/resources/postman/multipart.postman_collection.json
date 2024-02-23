@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "75c8fc92-fe4b-4961-9fb7-d9c016c4083b",
+		"name": "multipart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13895087"
+	},
+	"item": [
+		{
+			"name": "Upload One File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/file/uploadOne",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"file",
+						"uploadOne"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Many Files",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/file/uploadMany",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"file",
+						"uploadMany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/file/download/:filename",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"file",
+						"download",
+						":filename"
+					],
+					"variable": [
+						{
+							"key": "filename",
+							"value": "cat.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
