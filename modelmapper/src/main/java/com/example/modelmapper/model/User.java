@@ -1,4 +1,4 @@
-package com.example.mapper.model;
+package com.example.modelmapper.model;
 
 import java.io.Serializable;
 

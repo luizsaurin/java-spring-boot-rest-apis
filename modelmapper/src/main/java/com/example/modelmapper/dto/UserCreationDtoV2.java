@@ -1,4 +1,4 @@
-package com.example.mapper.dto;
+package com.example.modelmapper.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

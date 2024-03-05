@@ -1,4 +1,4 @@
-package com.example.mapper.config;
+package com.example.modelmapper.config;
 
 import org.modelmapper.AbstractConverter;
 import org.modelmapper.ModelMapper;

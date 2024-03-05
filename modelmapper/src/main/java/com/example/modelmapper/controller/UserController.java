@@ -1,4 +1,4 @@
-package com.example.mapper.controller;
+package com.example.modelmapper.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.example.mapper.dto.UserCreationDtoV1;
-import com.example.mapper.dto.UserCreationDtoV2;
-import com.example.mapper.dto.UserUpdateDto;
-import com.example.mapper.service.UserService;
+import com.example.modelmapper.dto.UserCreationDtoV1;
+import com.example.modelmapper.dto.UserCreationDtoV2;
+import com.example.modelmapper.dto.UserUpdateDto;
+import com.example.modelmapper.service.UserService;
 
 import jakarta.validation.Valid;
 

@@ -1,4 +1,4 @@
-package com.example.mapper.service;
+package com.example.modelmapper.service;
 
 import java.net.URI;
 import java.util.Optional;
@@ -11,12 +11,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.example.mapper.dto.UserCreationDtoV1;
-import com.example.mapper.dto.UserCreationDtoV2;
-import com.example.mapper.dto.UserDetailsDto;
-import com.example.mapper.dto.UserUpdateDto;
-import com.example.mapper.model.User;
-import com.example.mapper.repository.UserRepository;
+import com.example.modelmapper.dto.UserCreationDtoV1;
+import com.example.modelmapper.dto.UserCreationDtoV2;
+import com.example.modelmapper.dto.UserDetailsDto;
+import com.example.modelmapper.dto.UserUpdateDto;
+import com.example.modelmapper.model.User;
+import com.example.modelmapper.repository.UserRepository;
 
 @Service
 public class UserService {

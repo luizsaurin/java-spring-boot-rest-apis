@@ -1,11 +1,11 @@
-package com.example.mapper.config;
+package com.example.modelmapper.config;
 
 import org.modelmapper.AbstractConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.mapper.dto.UserCreationDtoV2;
-import com.example.mapper.model.User;
+import com.example.modelmapper.dto.UserCreationDtoV2;
+import com.example.modelmapper.model.User;
 
 @Configuration
 public class ModelMapperConverters {

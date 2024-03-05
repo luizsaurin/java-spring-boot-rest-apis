@@ -1,35 +1,22 @@
-package com.example.mapper.dto;
+package com.example.modelmapper.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+public class UserUpdateDto {
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class UserDetailsDto {
-	
-	private Long id;
 	private String firstName;
 	private String lastName;
 	private Integer age;
 	private String email;
 	private Boolean isActive;
-	
-	public UserDetailsDto() {
+
+	public UserUpdateDto() {
 	}
 
-	public UserDetailsDto(Long id, String firstName, String lastName, Integer age, String email, Boolean isActive) {
-		this.id = id;
+	public UserUpdateDto(String firstName, String lastName, Integer age, String email, Boolean isActive) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.email = email;
 		this.isActive = isActive;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {

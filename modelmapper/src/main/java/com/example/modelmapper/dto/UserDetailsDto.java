@@ -1,36 +1,35 @@
-package com.example.mapper.dto;
+package com.example.modelmapper.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-public class UserCreationDtoV1 {
-
-	@NotBlank
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class UserDetailsDto {
+	
+	private Long id;
 	private String firstName;
-
-	@NotBlank
 	private String lastName;
-
-	@NotNull
 	private Integer age;
-
-	@NotBlank
-	@Email
 	private String email;
-
-	@NotNull
 	private Boolean isActive;
-
-	public UserCreationDtoV1() {
+	
+	public UserDetailsDto() {
 	}
 
-	public UserCreationDtoV1(String firstName, String lastName, Integer age, String email, Boolean isActive) {
+	public UserDetailsDto(Long id, String firstName, String lastName, Integer age, String email, Boolean isActive) {
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.email = email;
 		this.isActive = isActive;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
