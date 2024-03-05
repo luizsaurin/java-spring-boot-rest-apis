@@ -51,7 +51,7 @@ This project has FlyAway migrations support. The scripts for creating the tables
 Below is the minimum structure for Spring Security to work correctly.
 
 <div align="center">
-	<img src="docs/img/db-diagram.png">
+	<img src="resources/img/db-diagram.png">
 </div>
 
 &nbsp;
@@ -126,7 +126,7 @@ If you need to generate a new password, use the EncodeUtils class.
 To facilitate understanding, we can consider that the Security Filter is the gateway to the API. All requests will go through there, functioning as Middleware. After passing through the Security Filter, the request will be forwarded to the Security Configuration, where it will be forwarded to the endpoints defined there.
 
 <div align="center">
-	<img src="docs/img/request-flow.png">
+	<img src="resources/img/request-flow.png">
 </div>
 
 The fundamental function of the Filter is to define whether or not the user responsible for the Request should be considered as an authenticated user. Once this information is defined, Security Config will be able to know which endpoints this user has access to.
@@ -162,7 +162,7 @@ return userRepository.findByUsername(username).orElseThrow(
 The Security Filter and Security Config belong to the Spring Security layer, and the API Controllers are not within it. Therefore, exceptions that happen in the Security layer cannot be handled by Controller Advice.
 
 <div align="center">
-	<img src="docs/img/security-layer.png">
+	<img src="resources/img/security-layer.png">
 </div>
 
 By default, Spring Security resolves most situations by responding with HTTP status 403. Situations such as incomplete request, expired JWT, non-existent routes, among others.
@@ -206,3 +206,10 @@ Finalmente, mas não menos importante, para executar e testar o projeto é bem s
 1. Run the docker-compose.yml
 2. Run the Spring Boot API
 3. Use the Postman collection to test the endpoints
+
+Dependencies:
+
+- Docker
+- Docker compose
+- Java JDK 17
+- Maven 3.9.3+

@@ -35,4 +35,9 @@ build/
 src/main/resources/META-INF
 
 ### Docker ###
-/docker
+.docker/
+
+### Maven ###
+.mvn/
+mvnw
+mvnw.cmd
