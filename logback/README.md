@@ -59,3 +59,10 @@ To perform a more complex configuration, such as changing the font weight along 
 <div align="center">
 	<img src="resources/img/custom-colors-xml.png">
 </div>
+
+&nbsp;
+
+## **Dependencies**
+
+- Java JDK 17
+- Maven 3.9.3+

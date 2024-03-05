@@ -55,3 +55,10 @@ This is the json resulting from this configuration:
 &nbsp;
 
 It was possible to obtain the same response json using both configurations.
+
+&nbsp;
+
+## **Dependencies**
+
+- Java JDK 17
+- Maven 3.9.3+

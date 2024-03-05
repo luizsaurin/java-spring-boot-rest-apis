@@ -79,3 +79,10 @@ With these settings, each user will have the "self" and "allUsers" link in the r
 <div align="center">
 	<img src="resources/img/user1.png">
 </div>
+
+&nbsp;
+
+## **Dependencies**
+
+- Java JDK 17
+- Maven 3.9.3+
