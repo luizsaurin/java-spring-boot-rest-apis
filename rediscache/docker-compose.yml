@@ -1,11 +1,11 @@
 version: '3.9'
-
 services:
-  redis-7.2.1-alpine:
+  redis-cache:
+    container_name: redis-cache
     network_mode: bridge
     image: redis:7.2.1-alpine
     restart: unless-stopped
     volumes:
-      - ./docker/redis/data:/data
+      - ./.docker/redis/data:/data
     ports:
       - 6379:6379
