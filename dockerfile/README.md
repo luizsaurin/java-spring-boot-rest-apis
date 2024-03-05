@@ -157,4 +157,4 @@ Below are the dependencies to run this project:
 - Docker
 - Docker-compose
 - Java JDK 17
-- Maven 3.9.3
+- Maven 3.9.3+

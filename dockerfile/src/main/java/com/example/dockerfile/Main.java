@@ -1,4 +1,4 @@
-package com.example.docker;
+package com.example.dockerfile;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.example.docker.service;
+package com.example.dockerfile.service;
 
 import java.net.URI;
 import java.util.Optional;
@@ -9,11 +9,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.example.docker.dto.UserCreationDto;
-import com.example.docker.dto.UserDetailsDto;
-import com.example.docker.dto.UserUpdateDto;
-import com.example.docker.model.User;
-import com.example.docker.repository.UserRepository;
+import com.example.dockerfile.dto.UserCreationDto;
+import com.example.dockerfile.dto.UserDetailsDto;
+import com.example.dockerfile.dto.UserUpdateDto;
+import com.example.dockerfile.model.User;
+import com.example.dockerfile.repository.UserRepository;
 
 @Service
 public class UserService {

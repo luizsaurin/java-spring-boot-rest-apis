@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "fe880c9e-0817-4bf6-a22d-dfec7e85fd19",
-		"name": "spring-boot-api-with-docker",
+		"name": "dockerfile",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "13895087"
 	},

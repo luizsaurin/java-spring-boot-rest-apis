@@ -1,6 +1,6 @@
-package com.example.docker.dto;
+package com.example.dockerfile.dto;
 
-import com.example.docker.model.User;
+import com.example.dockerfile.model.User;
 
 public record UserDetailsDto(
 	Long id,

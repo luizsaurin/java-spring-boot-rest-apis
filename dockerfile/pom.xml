@@ -12,9 +12,9 @@
 	</parent>
 	
 	<groupId>com.example</groupId>
-	<artifactId>spring-boot-api-with-docker</artifactId>
+	<artifactId>dockerfile</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-api-with-docker</name>
+	<name>dockerfile</name>
 	<description>Demo project for Spring Boot</description>
 	
 	<properties>

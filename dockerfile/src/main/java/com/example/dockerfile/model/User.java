@@ -1,9 +1,9 @@
-package com.example.docker.model;
+package com.example.dockerfile.model;
 
 import java.io.Serializable;
 
-import com.example.docker.dto.UserCreationDto;
-import com.example.docker.dto.UserUpdateDto;
+import com.example.dockerfile.dto.UserCreationDto;
+import com.example.dockerfile.dto.UserUpdateDto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

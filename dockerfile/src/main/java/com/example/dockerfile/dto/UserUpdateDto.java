@@ -1,4 +1,4 @@
-package com.example.docker.dto;
+package com.example.dockerfile.dto;
 
 public record UserUpdateDto(
 	String firstName,

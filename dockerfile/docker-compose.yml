@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   database:
-    container_name: docker-project-mysql
+    container_name: mysql
     image: mysql:8.0
     command: mysqld --default-authentication-plugin=mysql_native_password
     restart: always
@@ -14,9 +14,9 @@ services:
     ports:
       - 5001:5001
     networks:
-      - docker-project-network
+      - dockerfile-network
   spring-boot-api:
-    container_name: docker-project-spring-boot-api
+    container_name: spring-boot-api
     restart: always
     build:
       context: .
@@ -32,8 +32,8 @@ services:
     depends_on:
       - database
     networks:
-      - docker-project-network
+      - dockerfile-network
 networks:
-  docker-project-network:
-    name: docker-project-network
+  dockerfile-network:
+    name: dockerfile-network
     driver: bridge

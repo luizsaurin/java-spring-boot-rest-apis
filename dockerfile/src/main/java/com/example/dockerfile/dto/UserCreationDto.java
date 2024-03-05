@@ -1,4 +1,4 @@
-package com.example.docker.dto;
+package com.example.dockerfile.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

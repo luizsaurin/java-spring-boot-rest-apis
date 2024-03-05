@@ -1,4 +1,4 @@
-package com.example.docker.controller;
+package com.example.dockerfile.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.example.docker.dto.UserCreationDto;
-import com.example.docker.dto.UserUpdateDto;
-import com.example.docker.service.UserService;
+import com.example.dockerfile.dto.UserCreationDto;
+import com.example.dockerfile.dto.UserUpdateDto;
+import com.example.dockerfile.service.UserService;
 
 import jakarta.validation.Valid;
 

@@ -32,6 +32,12 @@ build/
 
 ### VS Code ###
 .vscode/
+src/main/resources/META-INF
 
-### Other ###
-/.docker
+### Docker ###
+.docker/
+
+### Maven ###
+.mvn/
+mvnw
+mvnw.cmd
