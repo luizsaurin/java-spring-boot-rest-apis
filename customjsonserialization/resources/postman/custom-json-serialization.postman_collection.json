@@ -22,52 +22,7 @@
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "200",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/user/example1",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"user",
-								"example1"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 30 Oct 2023 18:08:40 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"user_id\": 1,\n    \"user_email\": \"john.doe@mail.com\",\n    \"user_login\": \"john.doe\"\n}"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "Example 2",
@@ -85,52 +40,7 @@
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "200",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/user/example2",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"user",
-								"example2"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 30 Oct 2023 18:09:00 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"user_id\": 2,\n    \"user_email\": \"mary.jane@mail.com\",\n    \"user_login\": \"mary.jane\"\n}"
-				}
-			]
+			"response": []
 		}
 	],
 	"event": [
