@@ -1,3 +1,4 @@
+### General ###
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -32,5 +33,7 @@ build/
 ### VS Code ###
 .vscode/
 
-### Other ###
-/docker
+### Maven ###
+.mvn/
+mvnw
+mvnw.cmd
