@@ -33,3 +33,8 @@ build/
 ### VS Code ###
 .vscode/
 src/main/resources/META-INF
+
+### Maven ###
+.mvn/
+mvnw
+mvnw.cmd
