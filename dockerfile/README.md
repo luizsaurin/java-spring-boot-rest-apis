@@ -1,6 +1,6 @@
-<h1 align="center"><strong>Docker</strong></h1>
+<h1 align="center"><strong>Dockerfile</strong></h1>
 
-This is an example of an API configured for use in conjunction with Docker. To generate the application image, a Dockerfile and a docker-compose were used. This README will detail some points of attention for generating the API image and executing it via Docker containers. For more details, see the [official Spring documentation](https://spring.io/guides/topicals/spring-boot-docker).
+This is an example of an API configured to generate an image following instructions defined in the Dockerfile.. This README will detail some points of attention for generating the API image and executing it via Docker containers. For more details, see the [official Spring documentation](https://spring.io/guides/topicals/spring-boot-docker).
 
 &nbsp;
 
