@@ -12,7 +12,7 @@ There are no peculiarities to this project. So, just clone the repository and ru
 
 Dependencies:
 - Java JDK 17
-- Apache Maven 3.9.3 or newer
+- Apache Maven 3.9.3+
 
 Within the project, in the resources folder, a postman collection is available to make HTTP requests, and some multimedia files to test with the requests.
 

@@ -27,57 +27,7 @@
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "200",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/user",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"user"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 30 Oct 2023 17:51:58 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"id\": 1,\n        \"firstName\": \"John\",\n        \"lastName\": \"Doe\",\n        \"age\": 41,\n        \"email\": \"john.doe@mail.com\",\n        \"isActive\": true\n    },\n    {\n        \"id\": 2,\n        \"firstName\": \"Mary\",\n        \"lastName\": \"Jane\",\n        \"age\": 35,\n        \"email\": \"mary.jane@mail.com\",\n        \"isActive\": true\n    }\n]"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "XML",
@@ -100,57 +50,7 @@
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "200",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/xml",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/user",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"user"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "xml",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "application/xml;charset=UTF-8"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 30 Oct 2023 17:52:35 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "<ArrayList>\n    <item>\n        <id>1</id>\n        <firstName>John</firstName>\n        <lastName>Doe</lastName>\n        <age>41</age>\n        <email>john.doe@mail.com</email>\n        <isActive>true</isActive>\n    </item>\n    <item>\n        <id>2</id>\n        <firstName>Mary</firstName>\n        <lastName>Jane</lastName>\n        <age>35</age>\n        <email>mary.jane@mail.com</email>\n        <isActive>true</isActive>\n    </item>\n</ArrayList>"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "YAML",
@@ -173,57 +73,7 @@
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "200",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/x-yaml",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/user",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"user"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "yaml",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "application/x-yaml"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 30 Oct 2023 17:52:47 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "---\n- id: 1\n  firstName: \"John\"\n  lastName: \"Doe\"\n  age: 41\n  email: \"john.doe@mail.com\"\n  isActive: true\n- id: 2\n  firstName: \"Mary\"\n  lastName: \"Jane\"\n  age: 35\n  email: \"mary.jane@mail.com\"\n  isActive: true\n"
-				}
-			]
+			"response": []
 		}
 	],
 	"event": [

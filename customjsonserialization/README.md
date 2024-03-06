@@ -1,20 +1,18 @@
 <h1 align="center"><strong>Custom JSON Serialization</strong></h1>
 
-<p>This project is an example of a custom json serialization implementation. The objective is to configure a way to customize the fields in the request response json, changing their order, name and visibility.</p>
+This project is an example of a custom json serialization implementation. The objective is to configure a way to customize the fields in the request response json, changing their order, name and visibility.
 
-<p>Two implementations were used:</p>
+Two implementations were used:
 
-<h3><b>1 - Annotations on the response object</b></h3>
+### **Annotations on the response object**
 
-<p>This method consists of using @Json annotations from the <i>com.fasterxml.jackson.annotation</i> package in the fields of the User class, which is the object returned in the request response.</p>
+This method consists of using @Json annotations from the *com.fasterxml.jackson.annotation* package in the fields of the User class, which is the object returned in the request response.
 
-<p>In the example below, the following settings were made:</p>
+In the example below, the following settings were made:
 
-<ol>
-	<li>Fields order</li>
-	<li>Fields names, from default Camel Case to Snake Case</li>
-	<li>Hidden password field</li>
-</ol>
+1. Fields order
+2. Fields names, from default Camel Case to Snake Case
+3. Hidden password field
 
 <div align="center">
 	<img src="resources/img/user1.png">
@@ -30,13 +28,13 @@
 
 &nbsp;
 
-<h3><b>2 - Using a Data Transfer Object (DTO)</b></h3>
+### **Using a Data Transfer Object (DTO)**
 
-<p>This method consists of using an object that represents the same structure as the User class, but being able to customize how and which data will be displayed. This DTO object will be sent in the response, allowing you to keep the User model class unchanged.</p>
+This method consists of using an object that represents the same structure as the User class, but being able to customize how and which data will be displayed. This DTO object will be sent in the response, allowing you to keep the User model class unchanged.
 
-<p><i>In this example I am using Records from Java 17. However, it is possible to do the same thing with conventional Java classes.</i></p>
+*In this example I am using Records from Java 17. However, it is possible to do the same thing with conventional Java classes.*
 
-<p>The configuration applied in this example is the same as that applied in the previous example.</p>
+The configuration applied in this example is the same as that applied in the previous example.
 
 <div align="center">
 	<img src="resources/img/user2.png">
@@ -47,7 +45,8 @@
 <div align="center">
 	<img src="resources/img/user2dto.png">
 </div>
-<p>This is the json resulting from this configuration:</p>
+
+This is the json resulting from this configuration:
 
 <div align="center">
 	<img src="resources/img/json2.png">
@@ -55,4 +54,11 @@
 
 &nbsp;
 
-<p>It was possible to obtain the same response json using both configurations.</p>
+It was possible to obtain the same response json using both configurations.
+
+&nbsp;
+
+## **Dependencies**
+
+- Java JDK 17
+- Maven 3.9.3+

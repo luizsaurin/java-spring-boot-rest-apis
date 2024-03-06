@@ -1,13 +1,20 @@
 <h1 align="center"><strong>Redis Cache</strong></h1>
 
-<p>This project is an example of implementing Redis Cache.</p>
+This project is an example of implementing Redis Cache.
 
-<p>In this example, the cache was implemented in the Service class. This is because it is only possible to create cache from serializable objects. The Controller class returns the ResponseEntity object which is not serializable. This is why caching was added to the Service class methods, considering that they return serializable objects.</p>
+In this example, the cache was implemented in the Service class. This is because it is only possible to create cache from serializable objects. The Controller class returns the ResponseEntity object which is not serializable. This is why caching was added to the Service class methods, considering that they return serializable objects.
 
-<p>The following notations were used in this project:</p>
+The following notations were used in this project:
 
 - @Cacheable: Stores and fetches values present in the Redis database
 - @CachePut: Stores and updates values in the Redis database
-- @CacheEvict: Exclui valores no banco de dados do Redis
+- @CacheEvict: Deletes values in the Redis database
 
-<p>O método findById da classe UserService possui a notação @Cachable. Isso faz com que os valores não nulos que são retornados pelo método sejam armazenados no Redis. Se o valor consultado já existe, o Redis já retorna imediadamente o valor, sem a necessidade de realizar o código dentro do método.</p>
+The findById method of the UserService class has the @Cachable notation. This causes non-null values that are returned by the method to be stored in Redis. If the queried value already exists, Redis immediately returns the value, without the need to execute the code within the method.
+
+&nbsp;
+
+## **Dependencies**
+
+- Java JDK 17
+- Maven 3.9.3+

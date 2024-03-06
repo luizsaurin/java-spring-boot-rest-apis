@@ -1,9 +1,10 @@
 <h1 align="center"><strong>Content negotiation</strong></h1>
 
-<p>This project is an example of the implementation of Content Negotiation, that is, the API's ability to return data in different formats. In this case, the API was configured to return in JSON, XML and YAML formats.</p>
+This project is an example of the implementation of Content Negotiation, that is, the API's ability to receive and return data in different formats like JSON, XML and YAML.
 
 &nbsp;
 
-<div align="center">
-	<img src="resources/img/requests.png">
-</div>
+## **Dependencies**
+
+- Java JDK 17
+- Maven 3.9.3+
