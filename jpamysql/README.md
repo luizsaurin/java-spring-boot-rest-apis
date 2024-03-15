@@ -17,15 +17,13 @@ This is an example of a Java Spring Boot API using JPA and MySQL database. Here 
 
 ### Flyway
 
-This project supports Flyway migrations. However, by default, it is disabled. This was done because setting the 'hibernate.ddl-auto' property to 'update' makes it easier to change and test entity mappings. 
+This project supports Flyway migrations. The SQL scripts are in the *src/main/resources/db/migration* folder.
 
-To reactivate migrations, follow the steps below: 
+If you want to disable migrations to speed up experimentation with different mappings, follow the steps below: 
 
 1. Delete the database if it was created previously
-1. Uncomment the flyway dependency in pom.xml
-1. Change the value of the 'hibernate.ddl-auto' property to 'none' in application.yml
-
-The SQL scripts are in the *src/main/resources/db/migration* folder.
+1. Comment the flyway dependency in pom.xml
+1. Change the value of the 'hibernate.ddl-auto' property to 'update' in application.yml
 
 &nbsp;
 
