@@ -63,19 +63,19 @@ There are different ways to perform OneToOne mapping:
 @Entity
 @Table(name = "user")
 public class User {
-    
+	
 	@Id
-    private Long id;
+	private Long id;
 	@OneToOne
-    private UserProfile userProfile;
+	private UserProfile userProfile;
 }
 
 @Entity
 @Table(name = "user_profile")
 public class UserProfile {
-    
+	
 	@Id
-    private Long id;
+	private Long id;
 	private String fullName;
 }
 ```
@@ -88,21 +88,21 @@ In this case, @OneToOne establishes a unidirectional one-to-one relationship bet
 @Entity
 @Table(name = "user")
 public class User {
-    @Id
-    private Long id;
-    private String username;
-    @OneToOne(mappedBy = "user")
-    private UserProfile userProfile;
+	@Id
+	private Long id;
+	private String username;
+	@OneToOne(mappedBy = "user")
+	private UserProfile userProfile;
 }
 
 @Entity
 @Table(name = "user_profile")
 public class UserProfile {
-    @Id
-    private Long id;
-    private String fullName;
-    @OneToOne
-    private User user;
+	@Id
+	private Long id;
+	private String fullName;
+	@OneToOne
+	private User user;
 }
 ```
 
@@ -114,20 +114,20 @@ Here, mappedBy attribute is used in User entity to indicate that the owning side
 @Entity
 @Table(name = "user")
 public class User {
-    @Id
-    private Long id;
-    private String username;
-    @OneToOne
-    @JoinColumn(name = "user_profile_id")
-    private UserProfile userProfile;
+	@Id
+	private Long id;
+	private String username;
+	@OneToOne
+	@JoinColumn(name = "user_profile_id")
+	private UserProfile userProfile;
 }
 
 @Entity
 @Table(name = "user_profile")
 public class UserProfile {
-    
+	
 	@Id
-    private Long id;
+	private Long id;
 	private String fullName;
 }
 ```
@@ -154,22 +154,54 @@ This annotation establishes a one-to-many relationship between two entities. It 
 @Entity
 @Table(name = "post")
 public class Post {
-    
+	
 	@Id
-    private Long id;
-    private String title;
-    @OneToMany(mappedBy = "post")
-    private List<Comment> comments;
+	private Long id;
+	private String title;
+	@OneToMany(mappedBy = "post")
+	private List<Comment> comments;
 }
 
 @Entity
 @Table(name = "comment")
 public class Comment {
-    
+	
 	@Id
-    private Long id;
-    private String text;
-    @ManyToOne
-    private Post post;
+	private Long id;
+	private String text;
+	@ManyToOne
+	private Post post;
+}
+```
+
+&nbsp;
+
+## **@ManyToOne**
+
+This annotation establishes a many-to-one relationship between two entities. It means that multiple instances of an entity can be associated with one instance of another entity.
+
+<div align="center">
+	<img src="resources/img/many-to-one.png">
+</div>
+
+```
+@Entity
+@Table(name = "book")
+public class Book {
+	
+	@Id
+	private Long id;
+	private String title;
+	@ManyToOne
+	private Author author;
+}
+
+@Entity
+@Table(name = "author")
+public class Author {
+	
+	@Id
+	private Long id;
+	private String name;
 }
 ```
