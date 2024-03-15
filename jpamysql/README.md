@@ -53,9 +53,13 @@ In this project, only the most used mappings were used.
 
 ## **@OneToOne**
 
-This annotation establishes a one-to-one relationship between two entities. It means that one instance of an entity is associated with exactly one instance of another entity. There are different ways to perform OneToOne mapping:
+This annotation establishes a one-to-one relationship between two entities. It means that one instance of an entity is associated with exactly one instance of another entity. 
 
-### Simple @OneToOne
+<div align="center">
+	<img src="resources/img/one-to-one.png">
+</div>
+
+There are different ways to perform OneToOne mapping:
 
 ```
 @Entity
@@ -137,3 +141,37 @@ In this case, @JoinColumn annotation is used along with @OneToOne to specify the
 - Use simple @OneToOne when you only need a unidirectional relationship where one entity references another.
 - Use mappedBy when you need bidirectional mapping, and the other entity is responsible for managing the relationship.
 - Use @JoinColumn when you need more control over the column name and properties of the foreign key column in the owning entity's table.
+
+&nbsp;
+
+## **@OneToMany**
+
+This annotation establishes a one-to-many relationship between two entities. It means that one instance of an entity is associated with multiple instances of another entity.
+
+<div align="center">
+	<img src="resources/img/one-to-many.png">
+</div>
+
+```
+@Entity
+@Table(name = "post")
+public class Post {
+    
+	@Id
+    private Long id;
+    private String title;
+    @OneToMany(mappedBy = "post")
+    private List<Comment> comments;
+}
+
+@Entity
+@Table(name = "comment")
+public class Comment {
+    
+	@Id
+    private Long id;
+    private String text;
+    @ManyToOne
+    private Post post;
+}
+```
