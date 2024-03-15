@@ -105,7 +105,7 @@ There are two ways to set the source of a service in docker-compose.
 
 [DockerHub](https://hub.docker.com/) is equivalent to a docker image repository.
 
-You can use public and private images. For public images, enter the image name and, optionally, the image tag (version). Example below:
+For example, to search for an image from mysql, enter the name of the image and the desired tag.
 
 ```
 services:
@@ -113,12 +113,12 @@ services:
     image: mysql:8.0
 ```
 
-To use images from private repositories, you must provide the name of the owner user, the name of the image and optionally a tag. Example below:
+To search an image from a specific repository, enter the repository name, image name and the desired tag.
 
 ```
 services:
-  some-api:
-    image: username/some-api-name:latest
+  some-app:
+    image: repository/image-name:latest
 ```
 
 ### Local image
@@ -144,7 +144,15 @@ services:
     dockerfile: Dockerfile
 ```
 
-If both 'image' and 'build' properties are declared, docker compose will prioritize using the local image.
+If both 'image' and 'build' properties are declared, docker compose will not fetch the image from the dockerhub repository. In fact, docker compose will build the image defined in the Dockerfile with the same name defined in the 'image' property.
+
+```
+services:
+  image: repository/app-name
+  build:
+    context: .
+    dockerfile: Dockerfile
+```
 
 This project is only configured to use the locally created image, so the 'spring-boot-api' service will only have the 'build' property declared.
 
