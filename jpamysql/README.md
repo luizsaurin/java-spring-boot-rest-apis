@@ -49,7 +49,7 @@ In this project, only the most used mappings were used.
 
 &nbsp;
 
-## **@OneToOne**
+## **OneToOne**
 
 This annotation establishes a one-to-one relationship between two entities. It means that one instance of an entity is associated with exactly one instance of another entity. 
 
@@ -108,7 +108,7 @@ public class UserProfile {
 
 Here, mappedBy attribute is used in User entity to indicate that the owning side of the relationship is UserProfile, and it's mapped by the user attribute in UserProfile. This implies that UserProfile entity maintains the foreign key relationship in the database, referencing the primary key of the User table.
 
-### @JoinColumn
+### JoinColumn
 
 ```
 @Entity
@@ -142,7 +142,7 @@ In this case, @JoinColumn annotation is used along with @OneToOne to specify the
 
 &nbsp;
 
-## **@OneToMany**
+## **OneToMany**
 
 This annotation establishes a one-to-many relationship between two entities. It means that one instance of an entity is associated with multiple instances of another entity.
 
@@ -176,7 +176,7 @@ public class Comment {
 
 &nbsp;
 
-## **@ManyToOne**
+## **ManyToOne**
 
 This annotation establishes a many-to-one relationship between two entities. It means that multiple instances of an entity can be associated with one instance of another entity.
 
@@ -205,3 +205,83 @@ public class Author {
 	private String name;
 }
 ```
+
+&nbsp;
+
+## **ManyToMany**
+
+This annotation establishes a many-to-many relationship between two entities. It means that multiple instances of one entity can be associated with multiple instances of another entity.
+
+<div align="center">
+	<img src="resources/img/many-to-many.png">
+</div>
+
+```
+@Entity
+public class Student {
+
+	@Id
+	private Long id;
+	private String name;
+	@ManyToMany
+	@JoinTable(
+		name = "student_course",
+		joinColumns = @JoinColumn(name = "student_id"),
+		inverseJoinColumns = @JoinColumn(name = "course_id")
+	)
+	private List<Course> courses;
+}
+
+@Entity
+public class Course {
+	@Id
+	private Long id;
+	private String name;
+	@ManyToMany(mappedBy = "courses")
+	private List<Student> students;
+}
+```
+
+### Join Table
+
+A typical Many-to-Many relationship mapping using JPA, you'll need an intermediary table to represent the association between the two entities. This intermediary table is often referred to as a "join table" or "association table".
+
+Let's consider an example with Student and Course entities. Each student can enroll in multiple courses, and each course can have multiple students enrolled. In such a scenario, you'd need a join table to represent which students are enrolled in which courses.
+
+The other mapping types (OneToOne, OneToMany, and ManyToOne) do not require a separate join table because they represent different types of relationships where the mapping can be established directly through foreign key associations in the database schema.
+
+&nbsp;
+
+## **Mapping variations**
+
+This project presented some simple examples of JPA mappings. However, there are several different ways to configure these mappings.
+
+For example: in Many To Many mapping it is optional to use the mappedBy property
+
+```
+@Entity
+public class Course {
+	@ManyToMany(mappedBy = "courses")
+	private List<Student> students;
+}
+```
+
+```
+@Entity
+public class Course {
+	@ManyToMany
+	private List<Student> students;
+}
+```
+
+And an example of additional configuration is FetchType:
+
+```
+@Entity
+public class Course {
+	@ManyToMany(mappedBy = "courses", fetch = FetchType.LAZY)
+	private List<Student> students;
+}
+```
+
+This way, JPA mappings can be done in different ways and can have several optional configurations. It is important to evaluate the best strategy for each situation.
