@@ -44,4 +44,9 @@ public class Author {
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		return "Author [id=" + id + ", name=" + name + "]";
+	}
+
 }

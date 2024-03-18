@@ -285,3 +285,15 @@ public class Course {
 ```
 
 This way, JPA mappings can be done in different ways and can have several optional configurations. It is important to evaluate the best strategy for each situation.
+
+&nbsp;
+
+## **JPA queries**
+
+From the moment we create JPA interfaces for entities, by default we already have several queries available such as findAll or findById. JPA also makes it easy to create custom queries. The most popular types of custom queries are:
+
+- Named queries
+- JPQL queries
+- Native queries
+
+Considering that this project is focused on JPA mappings and not on queries, I chose to leave some examples of queries in the AuthorRepository. They are executed at project startup.
