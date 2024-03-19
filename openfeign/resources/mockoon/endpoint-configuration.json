@@ -1,0 +1,110 @@
+{
+    "uuid": "eee5d4f7-a7ad-4007-90a8-8ee857447e59",
+    "type": "http",
+    "documentation": "",
+    "method": "get",
+    "endpoint": "client",
+    "responses": [
+        {
+            "uuid": "6ae11a97-1f19-4e36-8ba5-1d5c66918a30",
+            "body": "{\n  \"message\":\"Mock Response: OK\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "",
+            "headers": [],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [
+                {
+                    "target": "query",
+                    "modifier": "status",
+                    "value": "200",
+                    "invert": false,
+                    "operator": "equals"
+                }
+            ],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+        },
+        {
+            "uuid": "1f14673e-8102-491c-9720-c7be240981fb",
+            "body": "{\n  \"message\":\"Mock Response: Bad Request\"\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "",
+            "headers": [],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [
+                {
+                    "target": "query",
+                    "modifier": "status",
+                    "value": "400",
+                    "invert": false,
+                    "operator": "equals"
+                }
+            ],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+        },
+        {
+            "uuid": "103f833f-08f7-449c-9143-56762c7fa5f3",
+            "body": "{\n  \"message\":\"Mock Response: Internal Server Error\"\n}",
+            "latency": 0,
+            "statusCode": 500,
+            "label": "",
+            "headers": [],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [
+                {
+                    "target": "query",
+                    "modifier": "status",
+                    "value": "500",
+                    "invert": false,
+                    "operator": "equals"
+                }
+            ],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+        },
+        {
+            "uuid": "ca4ea81d-a36d-46d7-8ebd-7f20bd6b27f5",
+            "body": "{\n  \"message\":\"Mock Response: Forbidden\"\n}",
+            "latency": 0,
+            "statusCode": 403,
+            "label": "",
+            "headers": [],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+        }
+    ],
+    "responseMode": null
+}

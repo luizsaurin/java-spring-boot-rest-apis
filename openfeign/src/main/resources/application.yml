@@ -1,0 +1,14 @@
+server:
+  port: 5000
+  error:
+    include-stacktrace: never
+spring:
+  output:
+    ansi:
+      enabled: always
+integration:
+  example-client:
+    url: http://localhost:3000
+logging:
+  level:
+    '[com.example.openfeign.integration]': DEBUG
