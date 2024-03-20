@@ -1,0 +1,10 @@
+server:
+  port: 5000
+  error:
+    include-stacktrace: never
+spring:
+  output:
+    ansi:
+      enabled: always
+  application:
+    name: rabbitmq
