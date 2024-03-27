@@ -6,5 +6,20 @@ spring:
   output:
     ansi:
       enabled: always
-  application:
-    name: rabbitmq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+rabbitmq:
+  exchange:
+    direct: direct
+    fanout: fanout
+    topic: topic
+  queue:
+    queue01: queue01
+    queue02: queue02
+  routing-key:
+    orange: orange
+    black: black
+    green: green
