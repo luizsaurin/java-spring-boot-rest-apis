@@ -1,0 +1,32 @@
+server:
+  port: 5000
+  error:
+    include-stacktrace: never
+spring:
+  output:
+    ansi:
+      enabled: always
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+rabbitmq:
+  exchange:
+    exchange01: exchange01
+    exchange02: exchange02
+    exchange03: exchange03
+  queue:
+    queue01: queue01
+    queue02: queue02
+    queue03: queue03
+    queue04: queue04
+    queue05: queue05
+    queue06: queue06
+  routing-key:
+    key01: orange
+    key02: black
+    key03: green
+    key04: '*.orange.*'
+    key05: '*.*.rabbit'
+    key06: 'lazy.#'
