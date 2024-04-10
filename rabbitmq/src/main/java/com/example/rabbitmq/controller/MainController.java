@@ -24,8 +24,20 @@ public class MainController {
 	
 	@PostMapping("/direct/{routingKey}")
 	public ResponseEntity<?> postUsingDirectExchange(@PathVariable String routingKey) {
-		mqProducer.sendMessage(mqConfig.getDirectExchange(), routingKey, "Hello world!");
+		mqProducer.sendMessage(mqConfig.getExchange01(), routingKey, "Hello world!");
 		return ResponseEntity.ok().build();
 	}
 	
+	@PostMapping("/fanout")
+	public ResponseEntity<?> postUsingFanoutExchange() {
+		mqProducer.sendMessage(mqConfig.getExchange02(), null, "Hello world!");
+		return ResponseEntity.ok().build();
+	}
+	
+	@PostMapping("/topic/{routingKey}")
+	public ResponseEntity<?> postUsingTopicExchange(@PathVariable String routingKey) {
+		mqProducer.sendMessage(mqConfig.getExchange03(), routingKey, "Hello world!");
+		return ResponseEntity.ok().build();
+	}
+
 }

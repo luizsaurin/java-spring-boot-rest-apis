@@ -24,4 +24,24 @@ public class RabbitMQConsumer {
 	public void queue02Listener(@Payload String message) {
 		log.info("Received || Queue: queue02 || Message: " + message);
 	}
+	
+	@RabbitListener(queues = "${rabbitmq.queue.queue03}")
+	public void queue03Listener(@Payload String message) {
+		log.info("Received || Queue: queue03 || Message: " + message);
+	}
+	
+	@RabbitListener(queues = "${rabbitmq.queue.queue04}")
+	public void queue04Listener(@Payload String message) {
+		log.info("Received || Queue: queue04 || Message: " + message);
+	}
+	
+	@RabbitListener(queues = "${rabbitmq.queue.queue05}")
+	public void queue05Listener(@Payload String message) {
+		log.info("Received || Queue: queue05 || Message: " + message);
+	}
+	
+	@RabbitListener(queues = "${rabbitmq.queue.queue06}")
+	public void queue06Listener(@Payload String message) {
+		log.info("Received || Queue: queue06 || Message: " + message);
+	}
 }
