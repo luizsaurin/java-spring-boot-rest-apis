@@ -16,6 +16,8 @@ The names of exchanges, queues and routing keys are defined in application.yml. 
 
 To learn more, see the official [RabbitMQ documentation for Spring](https://www.rabbitmq.com/tutorials/tutorial-one-spring-amqp).
 
+There is also an [online simulator](https://tryrabbitmq.com/) to try out queue and exchange combinations.
+
 ## **How to run**
 
 1. Run the docker-compose.yml. This will start a container with RabbitMQ.
