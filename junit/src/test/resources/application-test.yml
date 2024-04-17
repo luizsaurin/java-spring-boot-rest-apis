@@ -6,7 +6,7 @@ server:
 spring:
   # database
   datasource:
-    url: jdbc:mysql://localhost:5001/spring_boot_api?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:5001/spring_boot_api_test?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -16,6 +16,8 @@ spring:
     properties:
       hibernate:
         '[format_sql]': false
+        # disable hibernate logs
+        '[show_sql]': false
     hibernate:
       ddl-auto: none
   # console output
@@ -24,4 +26,4 @@ spring:
       enabled: always
   # flyway
   flyway:
-    locations: classpath:db/migration
+    locations: classpath:db/test-migration
