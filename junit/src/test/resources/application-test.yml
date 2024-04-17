@@ -1,0 +1,29 @@
+# server
+server:
+  port: 5000
+  error:
+    include-stacktrace: never
+spring:
+  # database
+  datasource:
+    url: jdbc:mysql://localhost:5001/spring_boot_api_test?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # jpa
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        '[format_sql]': false
+        # disable hibernate logs
+        '[show_sql]': false
+    hibernate:
+      ddl-auto: none
+  # console output
+  output:
+    ansi:
+      enabled: always
+  # flyway
+  flyway:
+    locations: classpath:db/test-migration
