@@ -17,14 +17,6 @@ In the case of this project, I chose to use a MySQL database in a Docker contain
 
 With this configuration, we were able to create a database with the same structure as the main application's database and use it in our tests.
 
-
-
-
-
-<div align="center">
-	<img src="">
-</div>
-
 &nbsp;
 
 ## **Hibernate logs**
