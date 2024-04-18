@@ -3,7 +3,6 @@ package com.example.mysql.model;
 import java.io.Serializable;
 
 import com.example.mysql.dto.UserCreationDto;
-import com.example.mysql.dto.UserUpdateDto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,11 +10,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity(name = "user")
-@Table(name = "users")
+@Entity
+@Table(name = "user")
 public class User implements Serializable {
 
+	// Serialization
+
 	private static final long serialVersionUID = 1L;
+
+	// Attributes
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +28,8 @@ public class User implements Serializable {
 	private Integer age;
 	private String email;
 	private Boolean isActive;
+
+	// Constructors
 
 	public User() {
 	}
@@ -45,13 +50,7 @@ public class User implements Serializable {
 		this.isActive = dto.isActive();
 	}
 
-	public void update(UserUpdateDto dto) {
-		this.firstName = dto.firstName();
-		this.lastName = dto.lastName();
-		this.age = dto.age();
-		this.email = dto.email();
-		this.isActive = dto.isActive();
-	}
+	// Methods
 
 	public Long getId() {
 		return id;
@@ -99,37 +98,6 @@ public class User implements Serializable {
 
 	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", email="
-				+ email + ", isActive=" + isActive + "]";
 	}
 
 }

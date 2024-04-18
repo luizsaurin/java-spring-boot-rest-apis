@@ -10,6 +10,9 @@ public record UserDetailsDto(
 	String email,
 	Boolean isActive
 ) {
+	
+	// Constructors
+
 	public UserDetailsDto(User user) {
 		this(
 			user.getId(), 
