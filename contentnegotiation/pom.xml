@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.3</version>
+		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
@@ -25,7 +25,7 @@
 	
 	<dependencies>
 
-		<!-- Spring Boot Dependencies -->
+		<!-- Spring Dependencies -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -47,6 +47,14 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-yaml</artifactId>
+		</dependency>
+
+		<!-- Tests Dependencies -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 		
 	</dependencies>

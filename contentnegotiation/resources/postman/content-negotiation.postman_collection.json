@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "JSON",
+			"name": "Find all",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -27,19 +27,176 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "JSON",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 08 May 2024 01:19:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"firstName\": \"John\",\n        \"lastName\": \"Doe\",\n        \"age\": 41,\n        \"email\": \"john.doe@mail.com\",\n        \"isActive\": true\n    },\n    {\n        \"id\": 2,\n        \"firstName\": \"Mary\",\n        \"lastName\": \"Jane\",\n        \"age\": 35,\n        \"email\": \"mary.jane@mail.com\",\n        \"isActive\": true\n    }\n]"
+				},
+				{
+					"name": "XML",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/xml;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 08 May 2024 01:20:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<ArrayList>\n    <item>\n        <id>1</id>\n        <firstName>John</firstName>\n        <lastName>Doe</lastName>\n        <age>41</age>\n        <email>john.doe@mail.com</email>\n        <isActive>true</isActive>\n    </item>\n    <item>\n        <id>2</id>\n        <firstName>Mary</firstName>\n        <lastName>Jane</lastName>\n        <age>35</age>\n        <email>mary.jane@mail.com</email>\n        <isActive>true</isActive>\n    </item>\n</ArrayList>"
+				},
+				{
+					"name": "YAML",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/x-yaml"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "yaml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/x-yaml"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 08 May 2024 01:20:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "---\n- id: 1\n  firstName: \"John\"\n  lastName: \"Doe\"\n  age: 41\n  email: \"john.doe@mail.com\"\n  isActive: true\n- id: 2\n  firstName: \"Mary\"\n  lastName: \"Jane\"\n  age: 35\n  email: \"mary.jane@mail.com\"\n  isActive: true\n"
+				}
+			]
 		},
 		{
-			"name": "XML",
+			"name": "Create",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [
 					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
 						"key": "Accept",
-						"value": "application/xml",
-						"type": "text"
+						"value": "application/json"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"age\": 41,\r\n    \"email\": \"john.doe@mail.com\",\r\n    \"isActive\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "{{baseUrl}}/user",
 					"host": [
@@ -50,30 +207,203 @@
 					]
 				}
 			},
-			"response": []
-		},
-		{
-			"name": "YAML",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/x-yaml",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{baseUrl}}/user",
-					"host": [
-						"{{baseUrl}}"
+			"response": [
+				{
+					"name": "JSON",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"age\": 41,\r\n    \"email\": \"john.doe@mail.com\",\r\n    \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:5000/user"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 08 May 2024 02:34:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
 					],
-					"path": [
-						"user"
-					]
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"age\": 41,\n    \"email\": \"john.doe@mail.com\",\n    \"isActive\": true\n}"
+				},
+				{
+					"name": "XML",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<User>\r\n    <firstName>John</firstName>\r\n    <lastName>Doe</lastName>\r\n    <age>41</age>\r\n    <email>john.doe@mail.com</email>\r\n    <isActive>true</isActive>\r\n</User>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:5000/user"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/xml;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 08 May 2024 02:33:06 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<UserResponseDTO>\n    <id>1</id>\n    <firstName>John</firstName>\n    <lastName>Doe</lastName>\n    <age>41</age>\n    <email>john.doe@mail.com</email>\n    <isActive>true</isActive>\n</UserResponseDTO>"
+				},
+				{
+					"name": "YAML",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-yaml"
+							},
+							{
+								"key": "Accept",
+								"value": "application/x-yaml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "firstName: John\r\nlastName: Doe\r\nage: 41\r\nemail: john.doe@mail.com\r\nisActive: true",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "yaml",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:5000/user"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/x-yaml"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 08 May 2024 02:38:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "---\nid: 1\nfirstName: \"John\"\nlastName: \"Doe\"\nage: 41\nemail: \"john.doe@mail.com\"\nisActive: true\n"
 				}
-			},
-			"response": []
+			]
 		}
 	],
 	"event": [

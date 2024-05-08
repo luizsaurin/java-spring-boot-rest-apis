@@ -8,16 +8,18 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.example.contentnegotiation.constant.MediaTypeConstants;
+
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-	private static final MediaType APPLICATION_YML = MediaType.valueOf("application/x-yaml");
-
+	@SuppressWarnings("null")
 	@Override
 	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
 		converters.add(new YamlJackson2HttpMessageConverter());
 	}
 
+	@SuppressWarnings("null")
 	@Override
 	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
 		configurer
@@ -25,8 +27,8 @@ public class WebConfig implements WebMvcConfigurer {
 			.ignoreAcceptHeader(false)
 			.useRegisteredExtensionsOnly(false)
 			.defaultContentType(MediaType.APPLICATION_JSON)
-			.mediaType("json", MediaType.APPLICATION_JSON)
-			.mediaType("xml", MediaType.APPLICATION_XML)
-			.mediaType("x-yaml", APPLICATION_YML);
+			.mediaType(MediaTypeConstants.APPLICATION_JSON_SHORT, MediaType.APPLICATION_JSON)
+			.mediaType(MediaTypeConstants.APPLICATION_XML_SHORT, MediaType.APPLICATION_XML)
+			.mediaType(MediaTypeConstants.APPLICATION_YAML_SHORT, MediaType.valueOf(MediaTypeConstants.APPLICATION_YAML));
 	}
 }
