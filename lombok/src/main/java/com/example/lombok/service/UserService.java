@@ -40,12 +40,15 @@ public class UserService {
 
 		User user = userRepository.findById(id).orElseThrow(() -> new NotFoundException());
 		
-		user.setFirstName(dto.firstName());
-		user.setLastName(dto.lastName());
-		user.setAge(dto.age());
-		user.setEmail(dto.email());
-		user.setIsActive(dto.isActive());
-		
+		user = User.builder()
+			.id(user.getId())
+			.firstName(dto.getFirstName())
+			.lastName(dto.getLastName())
+			.age(dto.getAge())
+			.email(dto.getEmail())
+			.isActive(dto.getIsActive())
+		.build();
+
 		return new UserDetailsDto(userRepository.save(user));
 	}
 	

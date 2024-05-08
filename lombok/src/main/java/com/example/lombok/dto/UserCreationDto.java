@@ -3,23 +3,27 @@ package com.example.lombok.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public record UserCreationDto(
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserCreationDto {
+
+	@NotBlank
+	private String firstName;
 	
 	@NotBlank
-	String firstName,
-
-	@NotBlank
-	String lastName,
-
+	private String lastName;
+	
 	@NotNull
-	Integer age,
-
+	private Integer age;
+	
 	@NotBlank @Email
-	String email,
-
-	@NotNull
-	Boolean isActive
-) {
+	private String email;
 	
+	@NotNull
+	private Boolean isActive;
 }

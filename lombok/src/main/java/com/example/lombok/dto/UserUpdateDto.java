@@ -1,11 +1,17 @@
 package com.example.lombok.dto;
 
-public record UserUpdateDto(
-	String firstName,
-	String lastName,
-	Integer age,
-	String email,
-	Boolean isActive
-) {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserUpdateDto {
 	
+	private String firstName;
+	private String lastName;
+	private Integer age;
+	private String email;
+	private Boolean isActive;
 }

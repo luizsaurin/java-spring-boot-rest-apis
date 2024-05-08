@@ -59,7 +59,7 @@ public class UserController {
 		UriComponentsBuilder uBuilder
 	) {
 		UserDetailsDto responseDto = userService.create(dto);
-		URI uri = uBuilder.path(UserControllerURIs.FIND_BY_ID).buildAndExpand(responseDto.id()).toUri();
+		URI uri = uBuilder.path(UserControllerURIs.FIND_BY_ID).buildAndExpand(responseDto.getId()).toUri();
 		return ResponseEntity.created(uri).body(responseDto);
 	}
 
