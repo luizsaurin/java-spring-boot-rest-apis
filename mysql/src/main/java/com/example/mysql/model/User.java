@@ -34,14 +34,6 @@ public class User implements Serializable {
 	public User() {
 	}
 
-	public User(String firstName, String lastName, Integer age, String email, Boolean isActive) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
-		this.email = email;
-		this.isActive = isActive;
-	}
-
 	public User(UserCreationDto dto) {
 		this.firstName = dto.firstName();
 		this.lastName = dto.lastName();
