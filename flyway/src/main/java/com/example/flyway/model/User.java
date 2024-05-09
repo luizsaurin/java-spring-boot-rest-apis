@@ -2,8 +2,6 @@ package com.example.flyway.model;
 
 import java.io.Serializable;
 
-import com.example.flyway.dto.UserCreationDto;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -32,14 +30,6 @@ public class User implements Serializable {
 	// Constructors
 
 	public User() {
-	}
-
-	public User(UserCreationDto dto) {
-		this.firstName = dto.firstName();
-		this.lastName = dto.lastName();
-		this.age = dto.age();
-		this.email = dto.email();
-		this.isActive = dto.isActive();
 	}
 
 	// Methods
