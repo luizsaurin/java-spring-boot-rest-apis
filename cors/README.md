@@ -46,6 +46,12 @@ CORS is a security feature implemented by web browsers to prevent cross-origin r
 
 &nbsp;
 
+## CORS with Spring Security
+
+To configure CORS with the Spring Security module, the process is a little different. Spring Security has an out-of-the-box configuration, just add ``cors()`` to the *SecurityFilter* settings. If you want to configure manually, you can use *CorsConfigurationSource* @Bean. As this project is just a simple demonstration of CORS configuration without using Spring Security, these configurations were not applied. To learn more about it, I recommend reading: [CORS with Spring | Baeldung](https://www.baeldung.com/spring-cors).
+
+&nbsp;
+
 ## **How to run**
 
 1. Run the Spring Boot project
