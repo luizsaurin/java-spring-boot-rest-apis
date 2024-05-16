@@ -1,0 +1,16 @@
+server:
+  port: 5000
+  error:
+    include-stacktrace: never
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 5001
+      database: spring-boot-api
+      username: root
+      password: root
+      authentication-database: admin
+  output:
+    ansi:
+      enabled: always
