@@ -78,4 +78,16 @@ public class UserController {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
+
+	@GetMapping(UserControllerURIs.FIND_ALL_INACTIVE)
+	public ResponseEntity<?> findAllInactiveUsers() {
+		return ResponseEntity.ok(service.findAllInactiveUsers());
+	}
+
+	@Transactional
+	@DeleteMapping(UserControllerURIs.DELETE_ALL)
+	public ResponseEntity<?> deleteAll() {
+		service.deleteAll();
+		return ResponseEntity.noContent().build();
+	}
 }
