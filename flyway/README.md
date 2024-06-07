@@ -8,7 +8,7 @@ This is an example of a Java Spring Boot API using [Flyway](https://flywaydb.org
 
 Make sure the flyway dependency was correctly added to pom.xml
 
-```
+```xml
 <dependency>
   <groupId>org.flywaydb</groupId>
   <artifactId>flyway-mysql</artifactId>
@@ -21,7 +21,7 @@ Make sure the flyway dependency was correctly added to pom.xml
 
 By default, flyway assumes that migrations are located at src/main/resources/db/migration. If the files are in another location, you must declare in application.properties (or application.yml):
 
-```
+```yaml
 spring:
   flyway:
     locations: classpath:custom/migrations

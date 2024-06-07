@@ -9,7 +9,7 @@ Explaining what HATEOAS is in a simple way, it is the API's ability to inform th
 
 Let's assume that the user makes a request to consult a person's data, and receives the following response:
 
-```
+```json
 {
   "id": 1,
   "name": "John Doe",
@@ -20,7 +20,7 @@ In this example, HATEOAS is not being used. The API returns a simple JSON contai
 
 In the next example, the API is using HATEOAS, and along with the person's data, it returns a "links" field.
 
-```
+```json
 {
   "id": 1,
   "name": "John Doe",
@@ -38,7 +38,7 @@ In the next example, the API is using HATEOAS, and along with the person's data,
 
 The first link is "self", which describes the URL of the request itself.
 
-```
+```json
 {
   "rel": "self",
   "href": "http://localhost/users/1"
@@ -47,7 +47,7 @@ The first link is "self", which describes the URL of the request itself.
 
 The second is the "allUsers" link, which describes the URL of another endpoint that allows the user to query information about all people registered in the API.
 
-```
+```json
 {
   "rel": "allUsers",
   "href": "http://localhost/users"

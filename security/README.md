@@ -26,7 +26,7 @@ This project will use several libraries. However, the libraries that will be ess
 
 Make sure to have them in your pom.xml
 
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-security</artifactId>
@@ -68,7 +68,7 @@ Since we are implementing Spring Security, these two classes will be used for ac
 
 The Permission class will represent the permissions types. Spring Security requires this class to implement GrantedAuthority.
 
-```
+```java
 public class Permission implements GrantedAuthority
 ```
 
@@ -76,13 +76,13 @@ public class Permission implements GrantedAuthority
 
 The User class will represent the application's users. Spring Security requires this class to implement UserDetails.
 
-```
+```java
 public class User implements UserDetails
 ```
 
 Spring Security requires the existence of some attributes in the user to perform access control.
 
-```
+```java
 private String username;
 private String password;
 private Boolean accountNonExpired;
@@ -96,7 +96,7 @@ The name of these attributes is considered a Spring convention, so it is recomme
 
 It is necessary to map an intermediate table in the database to link users and permissions. Since this is a simple project, I chose to carry out this mapping within User as it is the strongest entity.
 
-```
+```java
 @ManyToMany(fetch = FetchType.EAGER)
 @JoinTable(
 	name = "user_permission", 
@@ -143,13 +143,13 @@ Note that this class is not directly used anywhere in the project. In fact, it i
 
 By default, when overriding the loadUserByUsername method, Java automatically creates the method informing that it throws a UsernameNotFoundException exception
 
-```
+```java
 public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
 ```
 
 At the time of creating this project, using version 3.2.2 of Spring Boot and Java 17, it appears that this exception is not thrown when the user search returns a null value. To get around this issue, I chose to implement it in a way that the execution is launched in case of null return.
 
-```
+```java
 return userRepository.findByUsername(username).orElseThrow(
 	() -> new UsernameNotFoundException("error message")
 );

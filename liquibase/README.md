@@ -8,7 +8,7 @@ This is an example of a Java Spring Boot API using the [Liquibase](https://docs.
 
 Make sure the liquibase dependency was correctly added to pom.xml
 
-```
+```xml
 <dependency>
   <groupId>org.liquibase</groupId>
   <artifactId>liquibase-core</artifactId>
@@ -23,13 +23,13 @@ Liquibase requires the existence of the changelog.xml file. The main function of
 
 The simplest strategy is to run all migrations present in a given directory.
 
-```
+```xml
 <includeAll path="liquibase/changesets"/>
 ```
 
 However, it is recommended to define the order in which each migration should be performed.
 
-```
+```xml
 <include relativeToChangelogFile="true" file="changesets/V1__create-user-table.sql" />
 ```
 
@@ -40,7 +40,7 @@ However, it is recommended to define the order in which each migration should be
 
 Within the application.properties (or application.yml) file, in addition to the datasource settings, it is necessary to inform the location of the changelog.xml file. In this case, I stored the file in *src/main/resources/liquibase/*. The storage location is a free choice, I chose this path.
 
-```
+```yaml
 spring:
   liquibase:
     change-log: classpath:/liquibase/changelog.xml
@@ -62,7 +62,7 @@ Liquibase supports different types of file formats such as XML, SQL, YAML, JSON,
 
 Generally, migrations only have the code to be executed. However, liquibase allows you to add metadata to the migration code.
 
-```
+```sql
 --liquibase formatted sql
 
 --changeset author:id

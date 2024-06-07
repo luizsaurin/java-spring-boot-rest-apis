@@ -8,7 +8,7 @@ This is an example of an API using [MapStruct]("https://mapstruct.org/"). There 
 
 Add the MapStruct dependencies to the pom.xml.
 
-```
+```xml
 <dependency>
 	<groupId>org.mapstruct</groupId>
 	<artifactId>mapstruct</artifactId>
@@ -28,7 +28,7 @@ Add the MapStruct dependencies to the pom.xml.
 
 Create a MapperStruct interface. Naming the interface is open to you liking. In this example, I named MapStructMapper.
 
-```
+```java
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface MapStructMapper {
 
@@ -47,7 +47,7 @@ MapStruct requires that all mappings that will be used in the API must be declar
 - UserCreationDto to User
 - UserUpdateDto to User
 
-```
+```java
 User userUpdateDtoToUser(UserUpdateDto dto);
 
 UserDetailsDto userToUserDetailsDto(User user);
@@ -55,7 +55,7 @@ UserDetailsDto userToUserDetailsDto(User user);
 
 However, sometimes it is necessary to create custom mappings. To do this, it is possible to define the names of the source and destination fields if they are different, and also use a data converter if necessary.
 
-```
+```java
 @Mapping(source = "enabled", target = "isActive", qualifiedByName = "stringToBoolean")
 User userCreationDtoToUser(UserCreationDto dto);
 

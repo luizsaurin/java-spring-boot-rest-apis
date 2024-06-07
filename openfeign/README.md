@@ -31,7 +31,7 @@ For this project, the Mockoon tool was used to return mocked API responses. Howe
 
 OpenFeign considers all HTTP responses with codes within the 4xx and 5xx ranges as an exception. This allows any FeignException handled in a custom way by the RestControllerAdvice. In this case, I configured it so that RestControllerAdvice resolves any FeignException dynamically.
 
-```
+```java
 @ExceptionHandler(FeignException.class)
 public ResponseEntity<?> handleFeignException(FeignException e) {
 
@@ -58,7 +58,7 @@ It is possible to define custom settings for OpenFeign. In this case, I defined 
 
 It is necessary to define the application.properties (or application.yml) so that the application captures FeignClients logs at the DEBUG level. It is possible to define specific FeignClients, or define the package where the FeignClients are. In this case, I defined the package name.
 
-```
+```yaml
 logging:
   level:
     '[com.example.openfeign.integration]': DEBUG
@@ -68,7 +68,7 @@ logging:
 
 Create a configuration class for Feign. In it, a Bean will be created that will define the desired log type. In my case, I just want to view the request URL and the response code, so I set it to BASIC.
 
-```
+```java
 @Configuration
 public class FeignConfig {
 	@Bean
@@ -82,7 +82,7 @@ public class FeignConfig {
 
 The last step is to add the custom configuration to the desired FeignClient.
 
-```
+```java
 @FeignClient(name..., url..., configuration = FeignConfig.class)
 public interface ExampleClient {
 }

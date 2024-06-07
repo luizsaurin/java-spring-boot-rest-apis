@@ -51,7 +51,7 @@ Example: /cat.jpg
 
 The storeFile method of the MultipartUtils class is responsible for storing files. Before the actions to define the storage location, and the storage action itself, there is a suggested location to add custom validations.
 
-```
+```java
 public String storeFile(MultipartFile file) {
 		
 	String fileName = StringUtils.cleanPath(file.getOriginalFilename());
@@ -97,7 +97,7 @@ By default, this project is configured to use 'inline' Content-Disposition. This
 
 It was not implemented in this project, but it is possible to define a remote location to store the files received via upload. This can be configured in the storeFile method, of the MultipartUtils class, responsible for carrying out the storage.
 
-```
+```java
 public String storeFile(MultipartFile file) {
 	
 	// storage location. could be local or remote

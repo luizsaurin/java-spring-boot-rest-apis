@@ -59,7 +59,7 @@ This annotation establishes a one-to-one relationship between two entities. It m
 
 There are different ways to perform OneToOne mapping:
 
-```
+```java
 @Entity
 @Table(name = "user")
 public class User {
@@ -84,7 +84,7 @@ In this case, @OneToOne establishes a unidirectional one-to-one relationship bet
 
 ### mappedBy
 
-```
+```java
 @Entity
 @Table(name = "user")
 public class User {
@@ -110,7 +110,7 @@ Here, mappedBy attribute is used in User entity to indicate that the owning side
 
 ### JoinColumn
 
-```
+```java
 @Entity
 @Table(name = "user")
 public class User {
@@ -150,7 +150,7 @@ This annotation establishes a one-to-many relationship between two entities. It 
 	<img src="resources/img/one-to-many.png">
 </div>
 
-```
+```java
 @Entity
 @Table(name = "post")
 public class Post {
@@ -184,7 +184,7 @@ This annotation establishes a many-to-one relationship between two entities. It 
 	<img src="resources/img/many-to-one.png">
 </div>
 
-```
+```java
 @Entity
 @Table(name = "book")
 public class Book {
@@ -216,7 +216,7 @@ This annotation establishes a many-to-many relationship between two entities. It
 	<img src="resources/img/many-to-many.png">
 </div>
 
-```
+```java
 @Entity
 public class Student {
 
@@ -258,7 +258,7 @@ This project presented some simple examples of JPA mappings. However, there are 
 
 For example: in Many To Many mapping it is optional to use the mappedBy property
 
-```
+```java
 @Entity
 public class Course {
 	@ManyToMany(mappedBy = "courses")
@@ -266,7 +266,7 @@ public class Course {
 }
 ```
 
-```
+```java
 @Entity
 public class Course {
 	@ManyToMany
@@ -276,7 +276,7 @@ public class Course {
 
 And an example of additional configuration is FetchType:
 
-```
+```java
 @Entity
 public class Course {
 	@ManyToMany(mappedBy = "courses", fetch = FetchType.LAZY)

@@ -24,7 +24,7 @@ With this configuration, we were able to create a database with the same structu
 
 If you want to disable hibernate logs during test execution, try using this configuration:
 
-```
+```yaml
 spring:
   jpa:
     properties:
@@ -38,7 +38,7 @@ spring:
 
 Spring provides annotations to apply automatic configurations to test classes.
 
-```
+```java
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 ```
 
@@ -48,7 +48,7 @@ In this case, this annotation tells Spring that an external database will be use
 
 ## **AutoConfigureMockMvc**
 
-```
+```java
 @AutoConfigureMockMvc(addFilters = false)
 ```
 

@@ -11,7 +11,7 @@ This is an example of an API using [ModelMapper](https://modelmapper.org). There
 First you need to create the @Bean with the ModelMapper configuration.
 Add the modelmapper dependency in the pom.xml.
 
-```
+```xml
 <dependency>
   <groupId>org.modelmapper</groupId>
   <artifactId>modelmapper</artifactId>
@@ -21,7 +21,7 @@ Add the modelmapper dependency in the pom.xml.
 
 Create a the initial Configuration class.
 
-```
+```java
 @Configuration
 public class ModelMapperConfig {
   @Bean
@@ -37,7 +37,7 @@ public class ModelMapperConfig {
 
 Using the initial configuration above, it's already possible to use modelmapper. Take a look at the example below:
 
-```
+```java
 UserDetailsDto dto = mapper.map(User.class, UserDetailsDto.class);
 ```
 

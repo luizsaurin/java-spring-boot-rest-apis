@@ -14,7 +14,7 @@ There are several ways to configure CORS in the application. Some ways are simpl
 
 For this project, I chose to apply a global configuration to the application, present in the *WebConfig.java* class. When implementing the *WebMvcConfigurer* interface, it is possible to override the *addCorsMappings* method. Inside this method, we can add CORS configurations.
 
-```
+```java
 @Override
 public void addCorsMappings(CorsRegistry registry) {
   registry.addMapping("/**")

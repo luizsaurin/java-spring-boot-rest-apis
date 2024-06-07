@@ -32,7 +32,7 @@ To do this, we can create a DTO for each version of the User class. And the conv
 
 There are several options for using Mappers. Some popular projects like ModelMapper, MapStruct, or implement your own mapper using pure java, which was the case with this project.
 
-```
+```java
 public Page<UserDetailsDtoV1> findAllV1(Pageable pagination) {
   Page<User> users = userRepository.findAll(pagination);
   return users.map(userMapper::toUserDetailsDtoV1);
@@ -41,7 +41,7 @@ public Page<UserDetailsDtoV1> findAllV1(Pageable pagination) {
 
 And just for demonstration, below is an example of what the same code would look like, but using ModelMapper.
 
-```
+```java
 public Page<UserDetailsDtoV1> findAllV1(Pageable pagination) {
   Page<User> users = userRepository.findAll(pagination);
   return users.map(user -> modelMapper.map(user, UserDetailsDtoV1.class));

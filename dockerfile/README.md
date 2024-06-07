@@ -32,7 +32,7 @@ You can place this file anywhere in the project. However, to simplify this proce
 
 If it is necessary to generate an image of an API using a version equal to or lower than Java JDK 8, it is suggested to configure ENTRYPOINT with the following value:
 
-```
+```dockerfile
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 ```
 
@@ -50,7 +50,7 @@ This project has two docker compose files. One is at the root of the project, wh
 
 In the docker compose file used for development, the "ports" property is sufficient to map the database service port with the local machine port. In this case, MySQL's default port 3306 is mapped to port 5001 on the local machine.
 
-```
+```yaml
 services:
   database:
     ports:
@@ -59,7 +59,7 @@ services:
 
 In the docker compose file used for deployment, it is necessary to define the desired port in the "ports" property and in the "MYSQL_TCP_PORT". In this case, I am forcing MySQL to run on port 5001, and I am connecting port 5001 on the container to port 5001 on the local machine.
 
-```
+```yaml
 services:
   database:
     environment:
@@ -70,7 +70,7 @@ services:
 
 I didn't investigate in depth, but if you use the default MySQL port in the "MYSQL_TCP_PORT" property, and connect port 3306 to 5001, it won't work.
 
-```
+```yaml
 services:
   database:
     environment:
@@ -107,7 +107,7 @@ There are two ways to set the source of a service in docker-compose.
 
 For example, to search for an image from mysql, enter the name of the image and the desired tag.
 
-```
+```yaml
 services:
   database:
     image: mysql:8.0
@@ -115,7 +115,7 @@ services:
 
 To search an image from a specific repository, enter the repository name, image name and the desired tag.
 
-```
+```yaml
 services:
   some-app:
     image: repository/image-name:latest
@@ -129,7 +129,7 @@ You can locally generate an image of a service using a Dockerfile.
 
 When the objective is to use an existing image on DockerHub, the service in Docker Compose must have the 'image' property declared.
 
-```
+```yaml
 services:
   database:
     image: mysql:8.0
@@ -137,7 +137,7 @@ services:
 
 However, when using a locally generated image, the 'image' property is not necessary. Instead, the 'build' property must be declared. Make sure docker compose and Dockerfile are in the same directory.
 
-```
+```yaml
 services:
   build:
     context: .
@@ -146,7 +146,7 @@ services:
 
 If both 'image' and 'build' properties are declared, docker compose will not fetch the image from the dockerhub repository. In fact, docker compose will build the image defined in the Dockerfile with the same name defined in the 'image' property.
 
-```
+```yaml
 services:
   image: repository/app-name
   build:

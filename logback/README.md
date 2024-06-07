@@ -18,7 +18,7 @@ This is an example of what the console logs look like when there is no configura
 
 This is an example of what console logs look like when *output.ansi.enabled* is set to **always** in the project's application.properties:
 
-```
+```properties
 spring.output.ansi.enabled=always
 ```
 
