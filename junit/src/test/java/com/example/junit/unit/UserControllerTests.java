@@ -8,6 +8,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.List;
 
@@ -23,7 +26,6 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.example.junit.advice.exceptions.NotFoundException;
 import com.example.junit.controller.UserController;
@@ -83,8 +85,8 @@ public class UserControllerTests {
 		// Request
 		mockMvc.perform(
 			get("/users/1"))
-			.andExpect(MockMvcResultMatchers.status().isOk())
-			.andExpect(MockMvcResultMatchers.jsonPath("$.id").value(detailsDto.id()))
+			.andExpect(status().isOk())
+			.andExpect(jsonPath("$.id").value(detailsDto.id()))
 		;
 	}
 
@@ -97,7 +99,7 @@ public class UserControllerTests {
 		// Request
 		mockMvc.perform(
 			get("/users/1"))
-			.andExpect(MockMvcResultMatchers.status().isNotFound())
+			.andExpect(status().isNotFound())
 		;
 	}
 
@@ -113,9 +115,9 @@ public class UserControllerTests {
 		// Request
 		mockMvc.perform(
 			get("/users"))
-			.andExpect(MockMvcResultMatchers.status().isOk())
-			.andExpect(MockMvcResultMatchers.jsonPath("$.content.size()").value(pageWithOneUser.getSize()))
-			.andExpect(MockMvcResultMatchers.jsonPath("$.content[0].id").value(detailsDto.id()))
+			.andExpect(status().isOk())
+			.andExpect(jsonPath("$.content.size()").value(pageWithOneUser.getSize()))
+			.andExpect(jsonPath("$.content[0].id").value(detailsDto.id()))
 		;
 	}
 
@@ -130,8 +132,8 @@ public class UserControllerTests {
 			post("/users")
 			.contentType(MediaType.APPLICATION_JSON)
 			.content(objectMapper.writeValueAsString(creationDto)))
-			.andExpect(MockMvcResultMatchers.status().isCreated())
-			.andExpect(MockMvcResultMatchers.header().exists("Location"))
+			.andExpect(status().isCreated())
+			.andExpect(header().exists("Location"))
 		;
 	}
 	
@@ -146,9 +148,9 @@ public class UserControllerTests {
 			put("/users/1")
 			.contentType(MediaType.APPLICATION_JSON)
 			.content(objectMapper.writeValueAsString(updateDto)))
-			.andExpect(MockMvcResultMatchers.status().isOk())
-			.andExpect(MockMvcResultMatchers.jsonPath("$.id").value(updatedDetailsDto.id()))
-			.andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value(updateDto.firstName()))
+			.andExpect(status().isOk())
+			.andExpect(jsonPath("$.id").value(updatedDetailsDto.id()))
+			.andExpect(jsonPath("$.firstName").value(updateDto.firstName()))
 		;
 	}
 	
@@ -161,7 +163,7 @@ public class UserControllerTests {
 		// Request
 		mockMvc.perform(
 			delete("/users/1"))
-			.andExpect(MockMvcResultMatchers.status().isNoContent())
+			.andExpect(status().isNoContent())
 		;
 	}
 }
